@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.mypack</groupId>
+	<artifactId>maven-core-test1</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>maven-core-test1</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<jetty.palgrave.home>/usr/local/jetty-palgrave-6.1.19</jetty.palgrave.home>
+		<author.name>Imran Khan</author.name>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ostermiller</groupId>
+			<artifactId>utils</artifactId>
+			<version>1.07.00</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>javax.mail-api</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+
+		</dependency>
+
+	</dependencies>
+	<build>
+		<finalName>testApp</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.fortasoft</groupId>
+				<artifactId>gradle-maven-plugin</artifactId>
+				<version>1.0.5</version>
+				<configuration>
+                    <gradleVersion>1.7</gradleVersion>
+                    <jvmArgs>
+                        <jvmArg>-DjettyPalgraveHome=${jetty.palgrave.home}</jvmArg>
+                        <jvmArg>-DauthorName=${author.name}</jvmArg>
+                    </jvmArgs>
+                </configuration>
+				<executions>
+					<execution>
+						<id>generateRpms</id>
+						<phase>package</phase>
+						<configuration>
+							<tasks>
+								<task>hello</task>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>invoke</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
