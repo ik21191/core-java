@@ -1,0 +1,43 @@
+apply plugin: 'rpm'
+apply plugin: 'maven'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    dependencies {
+        classpath 'com.trigonic:gradle-rpm-plugin:1.4'
+    }
+}
+
+def jettyHome = System.getProperty("jettyPalgraveHome")
+def autName = System.getProperty("authorName")
+userHome = System.getProperty("user.home");
+mavenSettings = new File(userHome, ".m2/settings.xml")
+
+repositories {
+    mavenRepo url: 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+    mavenRepo url: 'https://maven.java.net/content/repositories/snapshots'
+    mavenCentral()
+}
+
+//sourceSets.all {
+//}
+
+//dependencies {
+//}
+
+task hello {
+    doLast {
+        println 'Hello world ! It is written in build.gradle file'
+        println jettyHome
+        println autName
+        println userHome
+        println mavenSettings
+    }
+}
+
+
+
