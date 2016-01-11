@@ -1,3 +1,11 @@
 *.classpath
 *.project
 *.prefs
+*.class
+
+*.jar
+*.nblh~
+
+maven-archiver
+
+surefire-reports
