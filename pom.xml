@@ -8,7 +8,7 @@
 	<name>maven-core-test1</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<jetty.palgrave.home>/usr/local/jetty-palgrave-6.1.19</jetty.palgrave.home>
+		<jetty.palgrave.home>C:\usr\local\jetty-npg</jetty.palgrave.home>
 		<author.name>Imran Khan</author.name>
 	</properties>
 	<dependencies>
@@ -49,12 +49,12 @@
 				<artifactId>gradle-maven-plugin</artifactId>
 				<version>1.0.5</version>
 				<configuration>
-                    <gradleVersion>1.7</gradleVersion>
-                    <jvmArgs>
-                        <jvmArg>-DjettyPalgraveHome=${jetty.palgrave.home}</jvmArg>
-                        <jvmArg>-DauthorName=${author.name}</jvmArg>
-                    </jvmArgs>
-                </configuration>
+					<gradleVersion>1.7</gradleVersion>
+					<jvmArgs>
+						<jvmArg>-DjettyPalgraveHome=${jetty.palgrave.home}</jvmArg>
+						<jvmArg>-DauthorName=${author.name}</jvmArg>
+					</jvmArgs>
+				</configuration>
 				<executions>
 					<execution>
 						<id>generateRpms</id>

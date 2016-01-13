@@ -16,6 +16,8 @@ def jettyHome = System.getProperty("jettyPalgraveHome")
 def autName = System.getProperty("authorName")
 userHome = System.getProperty("user.home");
 mavenSettings = new File(userHome, ".m2/settings.xml")
+def target = "target/"
+def destinationDir = file(target)
 
 repositories {
     mavenRepo url: 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
@@ -36,6 +38,7 @@ task hello {
         println autName
         println userHome
         println mavenSettings
+        println destinationDir
     }
 }
 
