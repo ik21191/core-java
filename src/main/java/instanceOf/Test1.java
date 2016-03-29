@@ -31,8 +31,7 @@ public class Test1
         B bb=new B();
         A aa=(A)bb;
         aa.print();
-        if( a instanceof B)
-        {
+        if( a instanceof B){
             System.out.println("a is an object of B");
         }
         I i=new ImplI();
