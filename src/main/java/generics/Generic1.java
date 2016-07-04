@@ -1,5 +1,4 @@
 package generics;
-import java.util.Arrays;
 public class Generic1<T>
 {
     private T t;

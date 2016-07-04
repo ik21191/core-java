@@ -1,8 +1,10 @@
 package mypack;
 
+import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 
 public class Hello {
 
@@ -53,8 +55,17 @@ public class Hello {
         if (future.after(cal)) {
         System.out.println("Date " + time + " is after current date.");
         }
-
+        System.out.println("------------------------");
+        HashMap<String,String> m=new HashMap<String,String>();
+        m.put("a","abc");
+        m.put("b","abc");
+        m.put("c","abc");
+        m.put("d","abc");
+        m.put("e","abc");
+        System.out.println(m);
+        System.out.println("File Separater "+File.pathSeparatorChar);
         }
-	
 
+	
+		
 }

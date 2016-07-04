@@ -1,6 +1,11 @@
 package collection123;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+import java.util.TreeSet;
 class Student1
 {
 	int id;
@@ -39,13 +44,11 @@ class Student1
 		return id+"    "+name;
 	}
 }
-class Student1SalaryComparator implements Comparator
+class Student1SalaryComparator implements Comparator<Student1>
 {
 	@Override
-	public int compare(Object o1, Object o2) 
+	public int compare(Student1 s1, Student1 s2) 
 	{
-		Student1 s1=(Student1)o1;
-		Student1 s2=(Student1)o2;
 		return (int)s2.salary-(int)s1.salary;
 		//return s1.name.compareTo(s2.name);
 	}
@@ -61,41 +64,37 @@ class Org
 		this.orgName=orgName;
 	}
 }
-class SortWithId implements Comparator
+class SortWithId implements Comparator<Org>
 {
-	public int compare(Object o1, Object o2) 
+	public int compare(Org org1, Org org2) 
 	{
-		Org obj1=(Org)o1;
-		Org obj2=(Org)o2;
-		return obj1.id-obj2.id;
+		return org1.id-org2.id;
 	}
 }
-class SortWithName implements Comparator
+class SortWithName implements Comparator<Org>
 {
-	public int compare(Object o1, Object o2) 
+	public int compare(Org org1, Org org2) 
 	{
-		Org obj1=(Org)o1;
-		Org obj2=(Org)o2;
-		return obj1.orgName.compareTo(obj2.orgName);
+		return org1.orgName.compareTo(org2.orgName);
 	}
 }
 public class Comparator1 
 {
 	public static void main(String[] args) 
 	{
-		TreeSet tset=new TreeSet(new SortWithId());
+		TreeSet<Org> tset=new TreeSet<Org>(new SortWithId());
 		tset.add(new Org(103,"D"));
 		tset.add(new Org(101,"X"));
 		tset.add(new Org(104,"A"));
 		tset.add(new Org(102,"C"));
-		Iterator itr=tset.iterator();
+		Iterator<Org> itr=tset.iterator();
 		while(itr.hasNext())
 		{
 			Org org=(Org)itr.next();
 			System.out.println(org.id+"     "+org.orgName);
 		}
-		System.out.println("sorting list...............Collections.sort(List,Comparator)");
-		List list=new ArrayList();
+		System.out.println("sorting list...............Collections.sort(List, Comparator)");
+		List<Student1> list=new ArrayList<Student1>();
 		list.add(new Student1(103,5001.55,"AA"));
 		list.add(new Student1(104,500.55,"AC"));
 		list.add(new Student1(102,5005.55,"AB"));
