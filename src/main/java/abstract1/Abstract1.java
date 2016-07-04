@@ -1,5 +1,5 @@
 package abstract1;
-public abstract class Abstract1 // A class can be absract with or without absract method
+public abstract class Abstract1 // A class can be abstract with or without abstract method
 {
     public void display()
     {

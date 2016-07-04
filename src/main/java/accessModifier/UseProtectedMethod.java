@@ -1,5 +1,5 @@
 package accessModifier;
-import mypack.*;
+import mypack.AmbiguousMethodCalling;
 public class UseProtectedMethod extends AmbiguousMethodCalling
 {
     public void displayAA()

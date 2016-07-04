@@ -1,8 +1,5 @@
 package overriding1;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 class A2
 {

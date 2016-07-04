@@ -4,7 +4,7 @@ class MyThread extends Thread
 	public static void display(String threadName)
 	{
 		System.out.println(threadName+"  "+"before critical section");
-		synchronized(Test1.class)
+		synchronized(MyThread.class)
 		{
 			for(int i=1;i<=10;i++)
 			{
