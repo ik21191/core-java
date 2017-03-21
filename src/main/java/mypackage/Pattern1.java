@@ -15,7 +15,7 @@ public class Pattern1
 	//private static final String USERNAME_PATTERN3 = "(?=.*\\d).+";
 	private static final String USERNAME_PATTERN4 = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$";
 	private static final String USERNAME_PATTERN5 = 
-	"[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+	"(\\w+)";
 	
 	public Pattern1(){
 		  pattern = Pattern.compile(USERNAME_PATTERN5);
@@ -41,7 +41,7 @@ public class Pattern1
 		  //System.out.println(p.validate("000000"));//pattern2
 		  //System.out.println(p.validate("a1A#ii"));//pattern3
 		  //System.out.println(p.validate("#aa0aaa"));//pattern4
-		  System.out.println(p.validate("imr+an.khan@abc.com"));//pattern5
+		  System.out.println(p.validate("imran123"));//pattern5
 	  }
 
 }

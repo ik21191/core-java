@@ -9,15 +9,15 @@ public class SynchronizedList1
 		list.add(null);
 		list.add("Imran Khan");
 		synchronized(list){
-		Iterator i = list.iterator(); // Must be in synchronized block
+		Iterator<String> i = list.iterator(); // Must be in synchronized block
 		      while (i.hasNext()){
 		          System.out.println(i.next());}
 		}
 		System.out.println(list.contains(null));
-		List sList=new ArrayList();
+		List<Student> sList=new ArrayList<Student>();
 		sList.add(new Student("Imran Khan"));
 		sList.add(new Student("Vinay Kumar"));
-		for(Object o:sList)
+		for(Object o : sList)
 		{
 			Student s=(Student)o;
 			sList.remove(1);

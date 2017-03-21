@@ -5,17 +5,14 @@ public class List1
 {
 	public static void main(String[] args) 
 	{
-		List<String> list=new ArrayList<String>();
-		list.add(null);
-		System.out.println(list.contains(null));
-		List sList=new ArrayList();
-		sList.add(new Student("Imran Khan"));
-		sList.add(new Student("Vinay Kumar"));
-		for(Object o:sList)
-		{
-			Student s=(Student)o;
-			System.out.println(s);
-		}
+		List<String> fixedSizeList = Arrays.asList(new String[]{"Imran", "Arpit", "Gautam Kumar"});
+		//fixedSizeList.add("Rahul");//throw UnsupportedOperationException
+		List<String> normalList = new ArrayList<String>();
+		normalList.add("ABC");
+		List<String> list = Collections.emptyList();
+		list = normalList;
+		list.add("Imran");
+		System.out.println(list.size());
 	}
 
 }

@@ -6,13 +6,13 @@ public class ArrayOfArrayList1
 {
     public static void main(String arr[])
     {
-        ArrayList<A> list=new ArrayList<A>();
+        ArrayList<A> list = new ArrayList<A>();
         list.add(new A("Imran Khan"));
         list.add(new A("Vinay Kumar"));
         list.add(new A("Chandan Trikha"));
         list.add(new A("Rahul Tyagi"));
-        Object[] ob=list.toArray();
-        for(Object name:ob)
+        Object[] ob = list.toArray();
+        for(Object name : ob)
         {
             ((A)name).display();
         }
@@ -23,10 +23,10 @@ class A
     String name;
     A(String name)
     {
-        this.name=name;
+        this.name = name;
     }
     public void display()
     {
-        System.out.println("Name is "+name);
+        System.out.println("Name is " + name);
     }
 }
