@@ -1,5 +1,7 @@
 package overriding1;
 
+import java.io.FileInputStream;
+
 
 class A2
 {

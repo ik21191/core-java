@@ -25,7 +25,7 @@ public class Waiter implements Runnable{
             System.out.println(name + " processed : " + msg.getMsg());
             for(int i=0; i<10; i++) {
             	try {
-					Thread.sleep(1000);
+					Thread.sleep(1);
 					System.out.println(name + "  " + i);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block

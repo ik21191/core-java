@@ -15,7 +15,7 @@ public class StudentDaoImple implements StudentDao
 
     @Override
     public Student getStudent(int i) {
-        return new Student("Imran Khan",1);
+        return new Student("Imran Khan", 1);
     }
 
     @Override
