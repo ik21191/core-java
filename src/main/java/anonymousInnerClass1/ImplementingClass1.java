@@ -12,7 +12,7 @@ interface X
 }
 public class ImplementingClass1 
 {
-    A a=new A()
+    A a = new A()//Creating sub-class using Anonymous concept
     {
         @Override
         public void display()
@@ -20,7 +20,7 @@ public class ImplementingClass1
             System.out.println("display() of Anonymous Inner class.");
         }
     };
-    X x=new X()
+    X x = new X()//Creating anonymous class which implements an Interface
     {
         @Override// before jdk 1.5 it would show error
         public void print()

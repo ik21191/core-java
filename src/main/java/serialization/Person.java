@@ -6,14 +6,14 @@ public class Person implements Serializable
 {
     Address add;
     String name;
-    public Person(String n,Address add)
+    public Person(String name, Address add)
     {
-        name=n;
+        this.name=name;
         this.add=add;
     }
     public String toString()
     {
-        return "Person Name: "+name+"\tPerson Address: "+add.name;
+        return "Person Name: " + name + "\tPerson Address: " + add.name;
     }
     
 }

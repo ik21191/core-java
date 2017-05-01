@@ -3,8 +3,8 @@ import java.io.Serializable;
 public class Address implements Serializable
 {
     String name;
-    public Address(String n)
+    public Address(String name)
     {
-        name=n;
+        this.name=name;
     }
 }

@@ -20,9 +20,9 @@ public class X
     }
     public static void main(String arr[])
     {
-        X x=new X();
-        //double d=10;
-        //int d=10;
+        X x = new X();
+        //double d = 10;
+        //int d = 10;
         x.display(10.0);
     }
 }
