@@ -64,8 +64,15 @@ public class Hello {
         m.put("e","abc");
         System.out.println(m);
         System.out.println("File Separater "+File.pathSeparatorChar);
+        
+        System.out.println("=============================");
+        Calendar cal1 = Calendar.getInstance();
+        cal1.add(Calendar.MONTH, -4);
+        Date result = cal1.getTime();
+        System.out.println(result);
         }
-
+	
+	
 	
 		
 }

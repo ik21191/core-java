@@ -4,10 +4,10 @@ import java.io.*;
 
 public class File1 
 {
-	public static void main(String[] args) 
+	public static void main(String[] args)throws Exception 
 	{
 		try
-		{
+		{/*
 			File file=new File("d://file1/abc.txt");
 			System.out.println("Checking file : "+file.exists());
 			System.out.println(file.createNewFile());
@@ -41,11 +41,23 @@ public class File1
 				frout.write((char)charData);
 				System.out.print((char)charData);}
 			}
-		}
+		*/}
 		catch(Exception e)
 		{
 			System.out.println(e);
 		}
+		
+		print();
+		print();
+		print();
+	}
+	
+	public static void print() throws Exception {
+		File processedFile = new File("e:/dia/data/cancelOrder.txt");
+    	PrintWriter writer = null;
+    	writer = new PrintWriter(new FileWriter(processedFile, true), true);
+    	
+    	writer.println("hello");
 	}
 
 }
