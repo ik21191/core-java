@@ -1,0 +1,2481 @@
+<format>
+	<webmart>
+		<webmartCode>iop</webmartCode>
+			<file>
+				<fileName>.*iop_cms.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				<field>
+					<sequence>7</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>4</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>5</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>11</sequence>
+						<name>parameterInfo</name>
+						<description>This is the extra parameter field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetParameterFromParameterInfo</transformClass>
+							<targetSuccessField>journalId</targetSuccessField>
+							<targetSuccessField>institutionId</targetSuccessField>
+							<targetSuccessField>parameterInfo</targetSuccessField>
+							<targetSuccessField>article_id</targetSuccessField>
+							<targetSuccessField>session_id</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<!--<mergeFields>
+					<field>
+						<sequence>6,11</sequence>
+						<name>URLAndParameterInfo</name>
+						<description>Two fields containg url and parameter are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.MergeURLAndParameterInfo</transformClass>
+							<otherInfo>;</otherInfo>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>-->
+				
+			</file>
+	</webmart>
+	<webmart>
+		<webmartCode>iopscience</webmartCode>
+			<file>
+				<fileName>.*iop_science.*_1.*|.*iop_science.*_2.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				<field>
+					<sequence>7</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>4</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>5</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>11</sequence>
+						<name>parameterInfo</name>
+						<description>This is the extra parameter field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetParameterFromParameterInfo</transformClass>
+							<targetSuccessField>journalId</targetSuccessField>
+							<targetSuccessField>institutionId</targetSuccessField>
+							<targetSuccessField>parameterInfo</targetSuccessField>
+							<targetSuccessField>article_id</targetSuccessField>
+							<targetSuccessField>session_id</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<!--<mergeFields>
+					<field>
+						<sequence>6,11</sequence>
+						<name>URLAndParameterInfo</name>
+						<description>Two fields containg url and parameter are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.MergeURLAndParameterInfo</transformClass>
+							<otherInfo>;</otherInfo>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>-->
+			</file>
+	</webmart>
+	<webmart>
+		<webmartCode>ieee</webmartCode>
+			<file>
+				<fileName>.*w1.access.*|.*w2.access.*|.*w3.access.*|.*w4.access.*|.*w5.access.*|.*w6.access.*|.*w1.denial.*|.*w2.denial.*|.*w3.denial.*|.*w4.denial.*|.*w5.denial.*|.*w6.denial.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>identifier</name>
+					<description>This is extra field.</description>
+				</field>
+				
+				<field>
+					<sequence>8</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<field>
+					<sequence>12</sequence>
+					<name>session_id</name>
+					<description>This is the session_id field.</description>
+					<targetField>session_id</targetField>
+				</field>
+				<field>
+					<sequence>13</sequence>
+					<name>parameter2</name>
+					<description>This is the extra parameter field.</description>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>4</sequence>
+						<name>userId</name>
+						<description>This is the userId and institution field.</description>
+						<targetField>userId</targetField>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetUserAndInstitution</transformClass>
+							<targetSuccessField>institutionId</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>5</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>7</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+			</file>
+	</webmart>
+	<webmart>
+		<webmartCode>npg</webmartCode>
+			<file>
+				<fileName>.*-npg.nature.com-ex.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				
+				<field>
+					<sequence>7</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>4</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>5</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					
+					<field>
+						<sequence>6</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>6,11</sequence>
+						<name>Session ID</name>
+						<description>Two fields containg session id are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetSessionID</transformClass>
+							<otherInfo>jsessionid=,;</otherInfo>
+							<targetSuccessField>session_id</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+			<file>
+				<fileName>.*-press.nature.com-ex.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>identifier</name>
+					<description>This is an extra field.</description>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				
+				<field>
+					<sequence>8</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>5</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>7</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>7,12</sequence>
+						<name>Session ID</name>
+						<description>Two fields containg session id are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetSessionID</transformClass>
+							<otherInfo>jsessionid=,;</otherInfo>
+							<targetSuccessField>session_id</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+			<file>
+				<fileName>.*-guide.labanimal.com-ex.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>identifier</name>
+					<description>This is an extra field.</description>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				
+				<field>
+					<sequence>8</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>5</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>7</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>7,12</sequence>
+						<name>Session ID</name>
+						<description>Two fields containg session id are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetSessionID</transformClass>
+							<otherInfo>jsessionid=,;</otherInfo>
+							<targetSuccessField>session_id</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+			<file>
+				<fileName>.*-nature.com-ex.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>extra ip</name>
+					<description>This is an extra ip field.</description>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				
+				<field>
+					<sequence>8</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>5</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>7</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>12,7</sequence>
+						<name>Session ID</name>
+						<description>Two fields containg session id are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetSessionID</transformClass>
+							<otherInfo>jsessionid=,;</otherInfo>
+							<targetSuccessField>session_id</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+			<file>
+				<fileName>.*-labanimal.com-ex.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>identifier</name>
+					<description>This is an extra field.</description>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				
+				<field>
+					<sequence>8</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>5</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>7</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>7,12</sequence>
+						<name>Session ID</name>
+						<description>Two fields containg session id are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetSessionID</transformClass>
+							<otherInfo>jsessionid=,;</otherInfo>
+							<targetSuccessField>session_id</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+			<file>
+				<fileName>.*download.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				
+				<field>
+					<sequence>7</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>4</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>5</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					
+					<field>
+						<sequence>6</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+			</file>
+			<file>
+				<fileName>.*fastartnaturecom.*|.*testnaturecom.*|.*wwwnaturecom.*</fileName>
+				<field>
+					<sequence>3</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>requestMethod</name>
+					<description>This is the request method field.</description>
+					<targetField>requestMethod</targetField>
+				</field>
+				<field>
+					<sequence>5</sequence>
+					<name>url</name>
+					<description>This is the url field.</description>
+					<targetField>url</targetField>
+				</field>
+				<field>
+					<sequence>6</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>7</sequence>
+					<name>byteSent</name>
+					<description>This is the extra port field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>time-taken</name>
+					<description>This is extra time taken field.</description>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>cookie</name>
+					<description>This is the extra cookie field.</description>
+					<!--<targetField>session_id</targetField>-->
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.GetID</transformClass>
+						<otherInfo>JSESSIONID=,;</otherInfo>
+						<targetSuccessField>session_id</targetSuccessField>
+					</specialProcessing>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>5</sequence>
+						<name>resourceType</name>
+						<description>To get resourceType from url.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetResourceType</transformClass>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>1,2</sequence>
+						<name>DateAndTime</name>
+						<description>Two fields containg Date and Time are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.MergeParameter</transformClass>
+							<otherInfo>:</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+			<file>
+				<fileName>.*-ppv_access_grants_.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>dateTime</name>
+					<description>This is date time field.</description>
+					<targetField>dateTime</targetField>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>institutionId</name>
+					<description>This is institution id field.</description>
+					<targetField>institutionId</targetField>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>journalId</name>
+					<description>This is journal id field.</description>
+					<targetField>journalId</targetField>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>url</name>
+					<description>This is url field.</description>
+					<targetField>url</targetField>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>longIp</name>
+					<description>This is long ip field.</description>
+					<targetField>longIp</targetField>
+				</field>
+				<field>
+					<sequence>5</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>ip</name>
+					<description>This is the ip address field.</description>
+					<targetField>ip</targetField>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>userId</name>
+					<description>This is the ip address field.</description>
+					<defaultValue>ppv</defaultValue>
+					<targetField>userId</targetField>
+				</field>
+			</file>
+	</webmart>
+	<webmart>
+		<webmartCode>rsc</webmartCode>
+				<file>
+				<fileName>.*ebook_search.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverterBySeparator</transformClass>
+						<otherInfo>!</otherInfo>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				<field>
+					<sequence>7</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>4</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>5</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+			</file>
+			<file>
+				<fileName>.*pubs1.*</fileName>
+				<field>
+					<sequence>3</sequence>
+					<name>s-ip</name>
+					<description>This is the extra server ip field.</description>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>s-sitename</name>
+					<description>This is the extra server domain field.</description>
+				</field>
+				<field>
+					<sequence>5</sequence>
+					<name>s-computername</name>
+					<description>This is the extra server computername field.</description>
+				</field>
+				<field>
+					<sequence>6</sequence>
+					<name>requestMethod</name>
+					<description>This is the request method field.</description>
+					<targetField>requestMethod</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>port</name>
+					<description>This is the extra port field.</description>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userId</name>
+					<description>This is the user id field.</description>
+					<!--<targetField>userId</targetField>-->
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>12</sequence>
+					<name>cs-version</name>
+					<description>This is the http protocol version field.</description>
+					<targetField>httpVersion</targetField>
+				</field>
+				<field>
+					<sequence>13</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<field>
+					<sequence>15</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>16</sequence>
+					<name>host</name>
+					<description>This is the extra domain field.</description>
+				</field>
+				<field>
+					<sequence>17</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>18</sequence>
+					<name>sub-status</name>
+					<description>This is extra sub status field.</description>
+				</field>
+				<field>
+					<sequence>19</sequence>
+					<name>win-status</name>
+					<description>This is extra win-status field.</description>
+				</field>
+				<field>
+					<sequence>20</sequence>
+					<name>sc-bytes</name>
+					<description>This is extra sc-bytes field.</description>
+				</field>
+				<field>
+					<sequence>21</sequence>
+					<name>cs-bytes</name>
+					<description>This is extra cs-bytes field.</description>
+				</field>
+				<field>
+					<sequence>22</sequence>
+					<name>time-taken</name>
+					<description>This is extra time taken field.</description>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>7</sequence>
+						<name>resourceType</name>
+						<description>To get resourceType from url.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetResourceType</transformClass>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>14</sequence>
+						<name>cookie</name>
+						<description>This is the extra cookie field.</description>
+							<specialProcessing>
+								<transformClass>be.ibridge.kettle.Manipulator.GetID</transformClass>
+								<otherInfo>ASPSESSIONID,;</otherInfo>
+								<targetSuccessField>session_id</targetSuccessField>
+							</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>7,8</sequence>
+						<name>urlAndQueryParameter</name>
+						<description>Two fields containg url and query parameters are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.MergeParameter</transformClass>
+							<otherInfo>?</otherInfo>
+							<targetSuccessField>url</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>1,2</sequence>
+						<name>DateAndTime</name>
+						<description>Two fields containg Date and Time are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.MergeParameter</transformClass>
+							<otherInfo>:</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+			<file>
+				<fileName>.*</fileName>
+				<field>
+					<sequence>3</sequence>
+					<name>s-ip</name>
+					<description>This is the extra server ip field.</description>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>requestMethod</name>
+					<description>This is the request method field.</description>
+					<targetField>requestMethod</targetField>
+				</field>
+				<field>
+					<sequence>7</sequence>
+					<name>port</name>
+					<description>This is the extra port field.</description>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>userId</name>
+					<description>This is the user id field.</description>
+					<!--<targetField>userId</targetField>-->
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<field>
+					<sequence>12</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>13</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>14</sequence>
+					<name>sub-status</name>
+					<description>This is extra sub status field.</description>
+				</field>
+				<field>
+					<sequence>15</sequence>
+					<name>win-status</name>
+					<description>This is extra win-status field.</description>
+				</field>
+				<field>
+					<sequence>16</sequence>
+					<name>sc-bytes</name>
+					<description>This is extra sc-bytes field.</description>
+				</field>
+				<field>
+					<sequence>17</sequence>
+					<name>cs-bytes</name>
+					<description>This is extra cs-bytes field.</description>
+				</field>
+				<field>
+					<sequence>18</sequence>
+					<name>time-taken</name>
+					<description>This is extra time taken field.</description>
+				</field>
+				<field>
+					<sequence>19</sequence>
+					<name>athensId</name>
+					<description>This is athens or shibboleth id field.</description>
+					<targetField>userId</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>5</sequence>
+						<name>resourceType</name>
+						<description>To get resourceType from url.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetResourceType</transformClass>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>11</sequence>
+						<name>cookie</name>
+						<description>This is the extra cookie field.</description>
+							<specialProcessing>
+								<transformClass>be.ibridge.kettle.Manipulator.GetID</transformClass>
+								<otherInfo>ASPSESSIONID,;</otherInfo>
+								<targetSuccessField>session_id</targetSuccessField>
+							</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>5,6</sequence>
+						<name>urlAndQueryParameter</name>
+						<description>Two fields containg url and query parameters are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.MergeParameter</transformClass>
+							<otherInfo>?</otherInfo>
+							<targetSuccessField>url</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>1,2</sequence>
+						<name>DateAndTime</name>
+						<description>Two fields containg Date and Time are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.MergeParameter</transformClass>
+							<otherInfo>:</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+	</webmart>
+	<webmart>
+		<webmartCode>pal</webmartCode>
+			<file>
+				<fileName>.*-palgrave-journals.com-ex.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>identifier</name>
+					<description>This is an extra field.</description>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				
+				<field>
+					<sequence>8</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>5</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>7</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>12,7</sequence>
+						<name>Session ID</name>
+						<description>Two fields containg session id are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetSessionID</transformClass>
+							<otherInfo>jsessionid=,;</otherInfo>
+							<targetSuccessField>session_id</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+			<file>
+				<fileName>.*-secure.palgrave-journals.com-ex.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				
+				<field>
+					<sequence>7</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>4</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>5</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					
+					<field>
+						<sequence>6</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>11,6</sequence>
+						<name>Session ID</name>
+						<description>Two fields containg session id are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetSessionID</transformClass>
+							<otherInfo>jsessionid=,;</otherInfo>
+							<targetSuccessField>session_id</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+	</webmart>
+	<webmart>
+		<webmartCode>ieeecs</webmartCode>
+			<file>
+				<fileName>.*Yama1_access.*|.*Yama2_access.*|.*Hurd1_access.*|.*Hurd2_access.*|.*Bellca_access.*|.*Belldc_access.*|.*Andrews2_access.*|.*Booth_access.*|.*Godel_access.*|.*Godel2_access.*|.*Bech_access.*|.*Mauchly_access.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				<field>
+					<sequence>7</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>4</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>5</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				
+			</file>
+			<file>
+				<fileName>.*csw2_42530.esw3chh_S.*|.*csak_47577.esw3chh_S.*|.*csak_47559.esw3c_S.*|.*csak_39884.esw3chh_S.*</fileName>
+				<field>
+					<sequence>3</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>requestMethod</name>
+					<description>This is the request method field.</description>
+					<targetField>requestMethod</targetField>
+				</field>
+				<field>
+					<sequence>5</sequence>
+					<name>url</name>
+					<description>This is the url field.</description>
+					<targetField>url</targetField>
+				</field>
+				<field>
+					<sequence>6</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>7</sequence>
+					<name>byteSent</name>
+					<description>This is the extra port field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>time-taken</name>
+					<description>This is extra time taken field.</description>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>cookie</name>
+					<description>This is the extra cookie field.</description>
+					<targetField>session_id</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.GetID</transformClass>
+						<otherInfo>LDAP_UID=,~</otherInfo>
+						<targetSuccessField>userId</targetSuccessField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>12</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>5</sequence>
+						<name>resourceType</name>
+						<description>To get resourceType from url.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetResourceType</transformClass>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>1,2</sequence>
+						<name>DateAndTime</name>
+						<description>Two fields containg Date and Time are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.MergeParameter</transformClass>
+							<otherInfo>:</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+			<file>
+				<fileName>.*doi_resolver.*|.*csdl_access.*|.*instant_community.*</fileName>
+				<field>
+					<sequence>3</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>requestMethod</name>
+					<description>This is the request method field.</description>
+					<targetField>requestMethod</targetField>
+				</field>
+				<field>
+					<sequence>5</sequence>
+					<name>url</name>
+					<description>This is the url field.</description>
+					<targetField>url</targetField>
+				</field>
+				<field>
+					<sequence>6</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>7</sequence>
+					<name>byteSent</name>
+					<description>This is the extra port field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>time-taken</name>
+					<description>This is extra time taken field.</description>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>userId</name>
+					<description>This is the user id field.</description>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.GetFixedLengthFieldValue</transformClass>
+						<otherInfo>50</otherInfo>
+						<targetSuccessField>userId</targetSuccessField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>12</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>5</sequence>
+						<name>resourceType</name>
+						<description>To get resourceType from url.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetResourceType</transformClass>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>1,2</sequence>
+						<name>DateAndTime</name>
+						<description>Two fields containg Date and Time are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.MergeParameter</transformClass>
+							<otherInfo>:</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+	</webmart>
+	<webmart>
+		<webmartCode>astm</webmartCode>
+			<file>
+				<fileName>.*Logfile_.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				<field>
+					<sequence>7</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>4</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>5</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+			</file>
+	</webmart>
+	<webmart>
+		<webmartCode>palconnect</webmartCode>
+			<file>
+				<fileName>.*www.palgraveconnect.com-ex.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>identifier</name>
+					<description>This is an extra field.</description>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				
+				<field>
+					<sequence>8</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>5</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>7</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>12</sequence>
+						<name>Session ID</name>
+						<description>This is session id field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetID</transformClass>
+							<otherInfo>JSESSIONID=,;</otherInfo>
+							<targetSuccessField>session_id</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+	</webmart>
+	<webmart>
+		<webmartCode>sprotocols</webmartCode>
+			<file>
+				<fileName>.*access_log.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<!--<defaultValue></defaultValue>-->
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>2</sequence>
+					<name>domain</name>
+					<description>This is the domain field.</description>
+					<targetField>domain</targetField>
+				</field>
+				<field>
+					<sequence>3</sequence>
+					<name>userId</name>
+					<description>This is the extra userId field.</description>
+				</field>
+				<field>
+					<sequence>7</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>byteSent</name>
+					<description>This is the byteSent field.</description>
+					<targetField>byteSent</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<field>
+					<sequence>11</sequence>
+					<name>userId</name>
+					<description>This is the userId field.</description>
+					<targetField>userId</targetField>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>4</sequence>
+						<name>dateTime</name>
+						<description>This is the datetime field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+							<otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+							<targetErrorField>isError</targetErrorField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>5</sequence>
+						<name>timezone</name>
+						<description>This is the timezone field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+							<targetSuccessField>timezone</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>6</sequence>
+						<name>url</name>
+						<description>This is the url field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+							<targetSuccessField>requestMethod</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>httpVersion</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+			</file>
+	</webmart>
+	<webmart>
+		<webmartCode>simages</webmartCode>
+			<file>
+				<fileName>.*_u_ex.*</fileName>
+				<field>
+					<sequence>3</sequence>
+					<name>s-ip</name>
+					<description>This is the extra server ip field.</description>
+				</field>
+				<field>
+					<sequence>4</sequence>
+					<name>requestMethod</name>
+					<description>This is the request method field.</description>
+					<targetField>requestMethod</targetField>
+				</field>
+				<field>
+					<sequence>7</sequence>
+					<name>port</name>
+					<description>This is the extra port field.</description>
+				</field>
+				<field>
+					<sequence>8</sequence>
+					<name>userId</name>
+					<description>This is the user id field.</description>
+					<targetField>userId</targetField>
+				</field>
+				<field>
+					<sequence>9</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<field>
+					<sequence>10</sequence>
+					<name>userAgent</name>
+					<description>This is the userAgent field.</description>
+					<targetField>userAgent</targetField>
+				</field>
+				<field>
+					<sequence>12</sequence>
+					<name>referrerUrl</name>
+					<description>This is the referrerUrl field.</description>
+					<targetField>referrerUrl</targetField>
+				</field>
+				<field>
+					<sequence>13</sequence>
+					<name>statusCode</name>
+					<description>This is the statusCode field.</description>
+					<targetField>statusCode</targetField>
+				</field>
+				<field>
+					<sequence>14</sequence>
+					<name>sub-status</name>
+					<description>This is extra sub status field.</description>
+				</field>
+				<field>
+					<sequence>15</sequence>
+					<name>win-status</name>
+					<description>This is extra win-status field.</description>
+				</field>
+				<field>
+					<sequence>16</sequence>
+					<name>time-taken</name>
+					<description>This is extra time taken field.</description>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>5</sequence>
+						<name>resourceType</name>
+						<description>To get resourceType from url.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetResourceType</transformClass>
+							<targetSuccessField>resourceType</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>11</sequence>
+						<name>cookie</name>
+						<description>This is the extra cookie field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetID</transformClass>
+							<otherInfo>ASP.NET_SessionId=,;</otherInfo>
+							<targetSuccessField>session_id</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+				<mergeFields>
+					<field>
+						<sequence>5,6</sequence>
+						<name>urlAndQueryParameter</name>
+						<description>Two fields containg url and query parameters are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.MergeParameter</transformClass>
+							<otherInfo>?</otherInfo>
+							<targetSuccessField>url</targetSuccessField>
+						</specialProcessing>
+					</field>
+					<field>
+						<sequence>1,2</sequence>
+						<name>DateAndTime</name>
+						<description>Two fields containg Date and Time are merged.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.MergeParameter</transformClass>
+							<otherInfo>:</otherInfo>
+							<targetSuccessField>dateTime</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</mergeFields>
+			</file>
+	</webmart>
+	<webmart>
+                <webmartCode>smaterials</webmartCode>
+                        <file>
+                                <fileName>.*senldogo.*_access_log.*</fileName>
+                                <field>
+                                        <sequence>1</sequence>
+                                        <name>ip</name>
+                                        <description>This is the ip field.</description>
+                                        <!--<defaultValue></defaultValue>-->
+                                        <targetField>ip</targetField>
+                                        <specialProcessing>
+                                                <transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+                                                <targetSuccessField>longIp</targetSuccessField>
+                                                <targetErrorField>isError</targetErrorField>
+                                        </specialProcessing>
+                                </field>
+                                <field>
+                                        <sequence>2</sequence>
+                                        <name>via</name>
+                                        <description>This is an extra field.</description>
+                                </field>
+                                <field>
+                                        <sequence>3</sequence>
+                                        <name>extraIP</name>
+                                        <description>This is an extra field.</description>
+                                </field>
+                                <field>
+                                        <sequence>4</sequence>
+                                        <name>domain</name>
+                                        <description>This is the domain field.</description>
+                                </field>
+                                <field>
+                                        <sequence>5</sequence>
+                                        <name>userId</name>
+                                        <description>This is the Institution id field.</description>
+                                        <targetField>userId</targetField>
+                                </field>
+                                <field>
+                                        <sequence>9</sequence>
+                                        <name>statusCode</name>
+                                        <description>This is the statusCode field.</description>
+                                        <targetField>statusCode</targetField>
+					<description>This is the statusCode field.</description>
+                                        <targetField>statusCode</targetField>
+                                        <description>This is the statusCode field.</description>
+                                        <targetField>statusCode</targetField>
+                                </field>
+                                <field>
+                                        <sequence>10</sequence>
+                                        <name>byteSent</name>
+                                        <description>This is the byteSent field.</description>
+                                        <targetField>byteSent</targetField>
+                                </field>
+                                <field>
+                                        <sequence>11</sequence>
+                                        <name>referrerUrl</name>
+                                        <description>This is the referrerUrl field.</description>
+                                        <targetField>referrerUrl</targetField>
+                                </field>
+                                <field>
+                                        <sequence>12</sequence>
+                                        <name>userAgent</name>
+                                        <description>This is the userAgent field.</description>
+                                        <targetField>userAgent</targetField>
+                                </field>
+                                <field>
+                                        <sequence>13</sequence>
+                                        <name>cookie</name>
+                                        <description>This is an extra field.</description>
+                                </field>
+                                <field>
+                                        <sequence>14</sequence>
+                                        <name>session_id</name>
+                                        <description>This is the session id field.</description>
+                                        <targetField>session_id</targetField>
+                                </field>
+                                <field>
+                                        <sequence>15</sequence>
+                                        <name>institutionId</name>
+                                        <description>This is the extra port field.</description>
+                                        <targetField>domain</targetField>
+                                </field>
+                                <splitFields>
+                                        <field>
+                                                <sequence>6</sequence>
+						<name>dateTime</name>
+                                                <description>This is the datetime field.</description>
+                                                 <name>dateTime</name>
+                                                <description>This is the datetime field.</description>
+                                                <specialProcessing>
+                                                        <transformClass>be.ibridge.kettle.Manipulator.FormatApacheDateAndTime</transformClass>
+                                                        <otherInfo>dd/MMM/yyyy:HH:mm:ss,yyyy-MM-dd HH:mm:ss</otherInfo>
+                                                        <targetSuccessField>dateTime</targetSuccessField>
+                                                        <targetErrorField>isError</targetErrorField>
+                                                </specialProcessing>
+                                        </field>
+                                        <field>
+                                                <sequence>7</sequence>
+                                                <name>timezone</name>
+                                                <description>This is the timezone field.</description>
+                                                <specialProcessing>
+                                                        <transformClass>be.ibridge.kettle.Manipulator.FormatApacheTimezone</transformClass>
+                                                        <targetSuccessField>timezone</targetSuccessField>
+                                                </specialProcessing>
+                                        </field>
+                                        <field>
+                                                <sequence>8</sequence>
+                                                <name>url</name>
+                                                <description>This is the url field.</description>
+                                                <specialProcessing>
+                                                        <transformClass>be.ibridge.kettle.Manipulator.GetURLMethodVersionAndResourceType</transformClass>
+                                                        <targetSuccessField>requestMethod</targetSuccessField>
+                                                        <targetSuccessField>url</targetSuccessField>
+                                                        <targetSuccessField>httpVersion</targetSuccessField>
+                                                        <targetSuccessField>resourceType</targetSuccessField>
+                                                </specialProcessing>
+                                        </field>
+                                </splitFields>
+                        </file>
+        </webmart>
+<!--	<webmart>
+		<webmartCode>smaterials</webmartCode>
+			<file>
+				<fileName>.*amAgent_springermaterials_com.log-.*</fileName>
+				<field>
+					<sequence>1</sequence>
+					<name>dateTime</name>
+					<description>This is date time field.</description>
+					<targetField>dateTime</targetField>
+				</field>
+				<field>
+					<sequence>12</sequence>
+					<name>ip</name>
+					<description>This is the ip field.</description>
+					<targetField>ip</targetField>
+					<specialProcessing>
+						<transformClass>be.ibridge.kettle.Manipulator.IPToLongNumberConverter</transformClass>
+						<targetSuccessField>longIp</targetSuccessField>
+						<targetErrorField>isError</targetErrorField>
+					</specialProcessing>
+				</field>
+				<splitFields>
+					<field>
+						<sequence>2</sequence>
+						<name>parameterInfo</name>
+						<description>This is the extra parameter field.</description>
+						<specialProcessing>
+							<transformClass>be.ibridge.kettle.Manipulator.GetInstitutionAndURL</transformClass>
+							<targetSuccessField>statusCode</targetSuccessField>
+							<targetSuccessField>institutionId</targetSuccessField>
+							<targetSuccessField>url</targetSuccessField>
+							<targetSuccessField>resourceType</targetSuccessField>
+							<targetSuccessField>userId</targetSuccessField>
+						</specialProcessing>
+					</field>
+				</splitFields>
+			</file>
+	</webmart>-->
+</format>
