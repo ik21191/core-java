@@ -23,13 +23,16 @@ public class SimpleScenario {
 }
  
 class ThreadSum extends Thread {
+	private static final Logger log = Logger.getLogger(ThreadSum.class);
+	
     int total;
     @Override
     public void run(){
         synchronized(this){
             for(int i=0; i<10 ; i++){
             	try {
-					//Thread.sleep(1000); // if we comment this then we have no other thread to wake this, so it will wait infinitly 
+					Thread.sleep(1000);
+					log.info(".");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
