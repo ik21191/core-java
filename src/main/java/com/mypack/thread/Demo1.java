@@ -41,6 +41,7 @@ class MyThread implements Runnable
             String nn=in.nextLine();
             Name.setName(nn);
             display();
+            in.close();
     }
     public void display()
     {

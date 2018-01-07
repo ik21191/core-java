@@ -1,6 +1,8 @@
 package com.mypack.thread.synchronize;
-class SharedObject1 {//Because all the methods are synchronized in this case if any method gets the chance to execute then all the methods
-	//will have to wait till completion of this method as the whole object is locked for that particular method.
+class SharedObject1 {
+	/**Because all the methods are synchronized in this case if any method gets the chance to execute then all the methods
+	will have to wait till completion of this method as the whole object is locked for that particular method.
+	*/
 	public static void method1() {
 		synchronized(SharedObject1.class) {
 			System.out.println("method1 start");
