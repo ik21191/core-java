@@ -1,7 +1,24 @@
 package com.mypack.thread.synchronize;
-class SharedObject {//Because all the methods are synchronized in this case if any method gets the chance to execute then all the methods
-	//will have to wait till completion of this method as the whole object is locked for that particular method. Non synchronized method
-	//will not have lock
+class SharedObject {
+	/**Because all the methods are synchronized in this case if any method gets the chance to execute then all the methods
+	will have to wait till completion of this method as the whole object is locked for that particular method. Non synchronized method
+	will not have lock*/
+	
+	public void method1() {
+		synchronized (this) {
+			System.out.println("method1 start");
+			try {
+				Thread.sleep(6000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("method1 end");
+		}
+	}
+	
+	
+	/** This method works the same as above method, but we have used synchronized keyword in the header of method
 	public synchronized void method1() {
 		System.out.println("method1 start");
 		try {
@@ -11,12 +28,20 @@ class SharedObject {//Because all the methods are synchronized in this case if a
 			e.printStackTrace();
 		}
 		System.out.println("method1 end");
+	}*/
+	
+	public synchronized void method2() {
+		synchronized (this) {
+			System.out.println("method2 start");
+			System.out.println("method2 end");
+		}
 	}
 	
+	/** This method works the same as above method, but we have used synchronized keyword in the header of method
 	public synchronized void method2() {
 		System.out.println("method2 start");
 		System.out.println("method2 end");
-	}
+	}*/
 }
 
 class T1 implements Runnable {

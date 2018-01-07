@@ -88,6 +88,7 @@
 			<artifactId>apache-log4j-extras</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<!-- log4j dependency end -->
 		
 		<!-- This library is used to print log messages present in testJar-version.jar -->
 		<!-- https://github.com/ik21191/testJar -->
@@ -96,8 +97,6 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.5</version>
 		</dependency>
-		
-		<!-- log4j dependency end -->
 
 	</dependencies>
 	<build>
