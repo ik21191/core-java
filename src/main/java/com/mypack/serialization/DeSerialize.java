@@ -11,6 +11,7 @@ public class DeSerialize {
 		FileInputStream in = new FileInputStream("e://object.ser");
 		ObjectInputStream inObject = new ObjectInputStream(in);
 		Person p = (Person) inObject.readObject();
+		log.info("After DeSerialization : hashCode() : " + p.hashCode());
 		log.info(p);
 		inObject.close();
 		in.close();

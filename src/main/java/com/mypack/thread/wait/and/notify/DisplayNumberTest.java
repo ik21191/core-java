@@ -11,8 +11,9 @@ class DisplayNumber {
 	}
 }
 class MyNotifier implements Runnable {
+	private static final Logger log = Logger.getLogger(MyNotifier.class);
 	
-	DisplayNumber displayNumber = null;
+	DisplayNumber displayNumber;
 	
 	public MyNotifier(DisplayNumber displayNumber) {
 		
@@ -21,6 +22,7 @@ class MyNotifier implements Runnable {
 	@Override
 	public void run() {
 		synchronized(displayNumber) {
+			log.info(Thread.currentThread().getName() + " calling notify......");
 			displayNumber.notifyAll();
 			//displayNumber.notify();//If we have multiple thread in waiting state then only one thread is notified, rest will be in waiting
 		}
@@ -28,7 +30,7 @@ class MyNotifier implements Runnable {
 }
 class MyThread implements Runnable {
 	private static final Logger log = Logger.getLogger(MyThread.class);
-	DisplayNumber displayNumber = null;
+	DisplayNumber displayNumber;
 	
 	public MyThread(DisplayNumber displayNumber) {
 		
@@ -38,6 +40,7 @@ class MyThread implements Runnable {
 	public void run() {
 		synchronized(displayNumber) {
 			try {
+				log.info(Thread.currentThread().getName() + " calling wait..");
 				displayNumber.wait();
 			} catch (InterruptedException e) {
 				log.error(e);
