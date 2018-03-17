@@ -45,7 +45,7 @@ class SharedObject {
 }
 
 class T1 implements Runnable {
-	private SharedObject sharedObject = null;
+	private SharedObject sharedObject;
 	public T1(SharedObject sharedObject) {
 		this.sharedObject = sharedObject; 
 	}
@@ -56,7 +56,7 @@ class T1 implements Runnable {
 }
 
 class T2 implements Runnable {
-	private SharedObject sharedObject = null;
+	private SharedObject sharedObject;
 	public T2(SharedObject sharedObject) {
 		this.sharedObject = sharedObject; 
 	}

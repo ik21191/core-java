@@ -17,6 +17,7 @@ public class Serialize {
 		ObjectOutputStream objectOut = new ObjectOutputStream(out);
 
 		log.info("Serializing object state...........");
+		log.info("Before Serialization : hashCode() : " + p1.hashCode());
 		objectOut.writeObject(p1);
 		objectOut.writeObject(p2);
 		log.info("Saved.");
