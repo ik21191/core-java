@@ -2,7 +2,7 @@ package com.mypack.thread.wait.and.notify;
 
 import com.mypack.thread.shared.objects.Message;
 
-public class WaitNotifyTest {
+public class WaitNotifyTest1 {
 
     public static void main(String[] args) {
         Message msg = new Message("process it");

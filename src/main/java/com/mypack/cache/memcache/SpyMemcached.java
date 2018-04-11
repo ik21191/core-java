@@ -1,4 +1,4 @@
-package com.mypack.memcache;
+package com.mypack.cache.memcache;
 
 import java.net.InetSocketAddress;
 

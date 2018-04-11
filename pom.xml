@@ -62,6 +62,13 @@
     		<version>3.0.2</version>
 		</dependency>
 		
+		<!-- redis cache -->
+		<dependency>
+    		<groupId>redis.clients</groupId>
+    		<artifactId>jedis</artifactId>
+    		<version>2.4.2</version>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/net.spy/spymemcached -->
 		<dependency>
     		<groupId>net.spy</groupId>
