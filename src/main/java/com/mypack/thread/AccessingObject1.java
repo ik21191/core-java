@@ -24,5 +24,6 @@ public class AccessingObject1 implements Runnable {
         Thread t2 = new Thread(new AccessingObject1(), " Thread_2");
         t1.start();
         t2.start();
+        Thread.currentThread().join();
     }
 }

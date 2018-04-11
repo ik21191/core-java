@@ -23,8 +23,8 @@ class MyNotifier implements Runnable {
 	public void run() {
 		synchronized(displayNumber) {
 			log.info(Thread.currentThread().getName() + " calling notify......");
-			displayNumber.notifyAll();
-			//displayNumber.notify();//If we have multiple thread in waiting state then only one thread is notified, rest will be in waiting
+			//displayNumber.notifyAll();
+			displayNumber.notify();//If we have multiple thread in waiting state then only one thread is notified, rest will be in waiting
 		}
 	}
 }
@@ -50,8 +50,9 @@ class MyThread implements Runnable {
 	}
 }
 
-public class DisplayNumberTest {
+public class WaitNotifyTest2 {
 	
+	@SuppressWarnings("static-access")
 	public static void main(String arr[]) throws InterruptedException {
 		DisplayNumber displayNumbernew = new DisplayNumber();
 		Thread t1 = new Thread(new MyThread(displayNumbernew), "Thread1");
@@ -59,6 +60,7 @@ public class DisplayNumberTest {
 		Thread t3 = new Thread(new MyNotifier(displayNumbernew), "NotifierThread3");
 		t1.start();
 		t2.start();
+		Thread.currentThread().sleep(5000);
 		t3.start();
 	}
 }
