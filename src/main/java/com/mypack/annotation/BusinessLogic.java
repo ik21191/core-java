@@ -6,7 +6,9 @@
  * 
  */
 
-package com.mypack.annotation1;
+package com.mypack.annotation;
+
+import com.mypack.annotation.Todo.Priority;
 
 public class BusinessLogic {
     public BusinessLogic() {
@@ -17,18 +19,18 @@ public class BusinessLogic {
         System.out.println("This method is complete");
     }    
     
-    @Todo(priority = Todo.Priority.HIGH)
+    @Todo(priority = Priority.HIGH)
     public void notYetStartedMethod() {
         // No Code Written yet
     }
     
-    @Todo(priority = Todo.Priority.MEDIUM, author = "Uday", status = Todo.Status.STARTED)
+    @Todo(priority = Priority.MEDIUM, author = "Uday", status = Todo.Status.STARTED)
     public void incompleteMethod1() {
         //Some business logic is written
         //But its not complete yet
     }
 
-    @Todo(priority = Todo.Priority.LOW, status = Todo.Status.STARTED )
+    @Todo(priority = Priority.LOW, status = Todo.Status.STARTED )
     public void incompleteMethod2() {
         //Some business logic is written
         //But its not complete yet

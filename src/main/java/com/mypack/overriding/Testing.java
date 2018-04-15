@@ -1,4 +1,4 @@
-package com.mypack.overriding1;
+package com.mypack.overriding;
 abstract class AA
 {
 	public AA()

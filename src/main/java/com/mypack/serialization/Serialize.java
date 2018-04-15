@@ -13,6 +13,7 @@ public class Serialize {
 		Person.staticField = "Static field 1";
 		Address a2 = new Address("Azad Pur");
 		Person p2 = new Person("Vinay Kumar", a2);
+		
 		FileOutputStream out = new FileOutputStream("e://object.ser");
 		ObjectOutputStream objectOut = new ObjectOutputStream(out);
 

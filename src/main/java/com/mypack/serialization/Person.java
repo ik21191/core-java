@@ -15,6 +15,7 @@ public class Person implements Serializable {
 	public Person(String name, Address add) {
 		this.name = name;
 		this.add = add;
+		System.out.println("Person Parameterized consturtor is called ");
 	}
 
 	public String toString() {

@@ -9,7 +9,11 @@ import com.mypack.io.dao.StudentDaoImpl;
 public class StudentServiceImpl implements StudentService {
 	@Override
 	public int insertStudent(List<Student> studentList) {
-		StudentDao studentDao = new StudentDaoImpl();
+		StudentDao studentDao = getStudentDao();
 		return studentDao.insertStudent(studentList);
+	}
+	
+	protected StudentDao getStudentDao() {
+		return new StudentDaoImpl();
 	}
 }

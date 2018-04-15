@@ -1,4 +1,4 @@
-package com.mypack.annotation1;
+package com.mypack.annotation;
 /*
  * This Class demonstrates use of annotations using reflection.
  * 
@@ -24,7 +24,7 @@ public class TodoReport {
      */
     private static void getTodoReportForBusinessLogic() {
         
-        Class businessLogicClass = BusinessLogic.class;
+        Class<BusinessLogic> businessLogicClass = BusinessLogic.class;
         for(Method method : businessLogicClass.getMethods()) {
             Todo todoAnnotation = (Todo)method.getAnnotation(Todo.class);
             if(todoAnnotation != null) {
