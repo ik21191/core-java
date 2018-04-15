@@ -1,4 +1,4 @@
-package com.mypack.objectclass1;
+package com.mypack.objectclass;
 class A
 {
 	int id;

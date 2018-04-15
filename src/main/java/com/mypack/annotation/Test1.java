@@ -1,4 +1,4 @@
-package com.mypack.annotation1;
+package com.mypack.annotation;
 public class Test1 {
 
 	/**

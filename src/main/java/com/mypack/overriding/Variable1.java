@@ -1,4 +1,4 @@
-package com.mypack.overriding1;
+package com.mypack.overriding;
 class V
 {
     int a=100;

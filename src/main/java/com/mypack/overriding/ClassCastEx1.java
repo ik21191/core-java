@@ -1,4 +1,4 @@
-package com.mypack.overriding1;
+package com.mypack.overriding;
 class Parent{
 	public void display(){
 		System.out.println("Parent");

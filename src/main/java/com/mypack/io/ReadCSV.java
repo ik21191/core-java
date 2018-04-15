@@ -25,9 +25,12 @@ public class ReadCSV {
 				student.setAddress(fields[StudentHeader.STUDENT_ADDRESS.getIndex()]);
 				studentList.add(student);
 			}
-			
+			int count = 0;
 			StudentService studentService = new StudentServiceImpl();
-			int count = studentService.insertStudent(studentList);
+			for(int i = 0; i < 3; i++) {
+				count = studentService.insertStudent(studentList);	
+			}
+			
 			if(count > 0) {
 				System.out.println("Successfully inserted");
 			} else {
