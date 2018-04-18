@@ -32,6 +32,7 @@ public class StudentServiceImplTest {
 		//when
 		when(studentDao.insertStudent(list)).thenReturn(3);
 		
+		//then
 		StudentService studentService = new StudentServiceImpl() {
 			protected StudentDao getStudentDao() {
 				return studentDao;

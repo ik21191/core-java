@@ -7,6 +7,11 @@ class DisplayNumber {
 	public void print() {
 		for(int i=1; i<=5; i++) {
 			log.info(Thread.currentThread().getName() + " : " + i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				System.out.println(e);
+			}
 		}
 	}
 }
@@ -23,8 +28,8 @@ class MyNotifier implements Runnable {
 	public void run() {
 		synchronized(displayNumber) {
 			log.info(Thread.currentThread().getName() + " calling notify......");
-			//displayNumber.notifyAll();
-			displayNumber.notify();//If we have multiple thread in waiting state then only one thread is notified, rest will be in waiting
+			displayNumber.notifyAll();
+			//displayNumber.notify();//If we have multiple thread in waiting state then only one thread is notified, rest will be in waiting
 		}
 	}
 }
@@ -41,7 +46,11 @@ class MyThread implements Runnable {
 		synchronized(displayNumber) {
 			try {
 				log.info(Thread.currentThread().getName() + " calling wait..");
+				
 				displayNumber.wait();
+				
+				log.info(Thread.currentThread().getName() + " I woke up now, resuming my service...");
+				
 			} catch (InterruptedException e) {
 				log.error(e);
 			}
