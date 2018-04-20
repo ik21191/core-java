@@ -2,29 +2,55 @@ package com.mypack.thread.concurrent.lock;
 
 import java.util.concurrent.locks.ReentrantLock;
 
+import org.apache.log4j.Logger;
+
 class SharedObject1 {
+	private static final Logger log = Logger.getLogger(SharedObject1.class);
 	ReentrantLock lock = new ReentrantLock();
 	
-	public void read() {
+	public void read1() {
 		//below statement is executed before the lock so both thread can access this concurrenly
-		System.out.println("read(): Thread Name: " + Thread.currentThread().getName() + ": reading start..");
-		System.out.println("read(): Thread Name: " + Thread.currentThread().getName() + ": is hold by other thread: " + lock.isHeldByCurrentThread());
+		log.info("read()1: Thread Name: " + Thread.currentThread().getName() + ": reading start..");
+		log.info("read()1: Thread Name: " + Thread.currentThread().getName() + ": is hold by other thread: " + lock.getHoldCount());
 		
 		lock.lock();
 		
-		System.out.println("read(): Thread Name: " + Thread.currentThread().getName() + ": got the lock");
+		log.info("read()1: Thread Name: " + Thread.currentThread().getName() + ": got the lock");
 		try {
 			for (int i = 1; i <= 5; i++) {
-				System.out.println("read(): Thread Name: " + Thread.currentThread().getName() + ": Reading: " + i);
-				Thread.sleep(1000);
+				log.info("read()1: Thread Name: " + Thread.currentThread().getName() + ": Reading: " + i);
+				Thread.sleep(500);
 			}
+			read2();//Here the lock is spawned to this method, that is why it is called Reentrant in nature
 
 		} catch (InterruptedException e) {
-			System.out.println(e);
+			log.error(e);
 		} finally {
 			lock.unlock();
 		}
-		System.out.println("reading end.");
+		log.info("read1(): reading end.");
+	}
+	
+	public void read2() {
+		//below statement is executed before the lock so both thread can access this concurrenly
+		log.info("read()2: Thread Name: " + Thread.currentThread().getName() + ": reading start..");
+		log.info("read()2: Thread Name: " + Thread.currentThread().getName() + ": is hold by other thread: " + lock.getHoldCount());
+		
+		lock.lock();
+		
+		log.info("read()2: Thread Name: " + Thread.currentThread().getName() + ": got the lock");
+		try {
+			for (int i = 6; i <= 10; i++) {
+				log.info("read()2: Thread Name: " + Thread.currentThread().getName() + ": Reading: " + i);
+				Thread.sleep(500);
+			}
+
+		} catch (InterruptedException e) {
+			log.error(e);
+		} finally {
+			lock.unlock();
+		}
+		log.info("read2(): reading end.");
 	}
 }
 
@@ -37,7 +63,7 @@ class ReaderThread implements Runnable {
 
 	@Override
 	public void run() {
-		sharedObject1.read();
+		sharedObject1.read1();
 	}
 }
 

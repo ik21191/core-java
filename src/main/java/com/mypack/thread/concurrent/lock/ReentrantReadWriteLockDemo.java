@@ -4,39 +4,42 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+import org.apache.log4j.Logger;
+
 class SharedObject {
+	private static final Logger log = Logger.getLogger(SharedObject.class);
 	ReadWriteLock rwLock = new ReentrantReadWriteLock();
 	Lock readLock = rwLock.readLock();
 	Lock writeLock = rwLock.writeLock();
 	
 	public void read() {
 		readLock.lock();
-		System.out.println("reading start..");
+		log.info("reading start..");
 		try {
 			for (int i = 1; i <= 5; i++) {
-				System.out.println("read(): Thread Name: " + Thread.currentThread().getName() + "  Reading: " + i);
+				log.info("read(): Thread Name: " + Thread.currentThread().getName() + "  Reading: " + i);
 				Thread.sleep(1000);
 			}
 
 		} catch (InterruptedException e) {
-			System.out.println(e);
+			log.error(e);
 		} finally {
 			readLock.unlock();
 		}
-		System.out.println("reading end.");
+		log.info("reading end.");
 	}
 	
 
 	public void write() {
-		System.out.println("Writing startd ..");
+		log.info("Writing startd ..");
 		writeLock.lock();
 		try {
 			for (int i = 1; i <= 5; i++) {
-				System.out.println("write(): Thread Name: " + Thread.currentThread().getName() + "  Writing: " + i);
+				log.info("write(): Thread Name: " + Thread.currentThread().getName() + "  Writing: " + i);
 				Thread.sleep(1000);
 			}
 		} catch (Exception e) {
-			System.err.println(e);
+			log.error(e);
 		} finally {
 			writeLock.unlock();
 		}
