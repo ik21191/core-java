@@ -1,4 +1,4 @@
-package com.mypack.casting1;
+package com.mypack.casting;
 class Animal 
 {
     void makeNoise() {System.out.println("generic noise"); }

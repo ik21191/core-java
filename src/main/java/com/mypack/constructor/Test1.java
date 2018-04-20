@@ -1,4 +1,4 @@
-package com.mypack.constructor1;
+package com.mypack.constructor;
 class X
 {
 	public X()
