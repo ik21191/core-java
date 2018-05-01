@@ -1,4 +1,4 @@
-package com.mypack.test1;
+package com.mypack.misc;
 
 public class Hello {
 

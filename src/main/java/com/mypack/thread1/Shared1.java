@@ -5,6 +5,11 @@ public class Shared1 implements Runnable {
 	
 	@Override
 	public void run(){
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		System.out.println("Name of thread : " + Thread.currentThread().getName());
 		System.out.println("Value of sharedName is : " + obj.getSharedName() + " : " +Thread.currentThread().getName());
 	}
@@ -15,6 +20,8 @@ public class Shared1 implements Runnable {
 		t1.start();
 		t2.start();
 		t3.start();
+		
+		System.out.println("main completed.");
 	}
 }
 class SharedObject{

@@ -1,8 +1,11 @@
 package com.mypack.java8.date;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.Period;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 import org.apache.log4j.Logger;
 
@@ -13,6 +16,11 @@ public class CalculateAge {
 		 
 		Period p = Period.between(birthday, LocalDate.now());
 		log.info("Year: " + p.getYears() + ", Month: " + p.getMonths() + ", Day: " + p.getDays());
+		
+		String dateTime = LocalDateTime.now(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		
+		
+		System.out.println(dateTime);
 	}
 
 }

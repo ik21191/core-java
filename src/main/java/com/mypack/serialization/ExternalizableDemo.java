@@ -28,15 +28,15 @@ class Student implements Externalizable {
 	}
 
 	@Override
-	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-		this.name = in.readUTF();
-		this.roll = in.readInt();
-	}
-	
-	@Override
 	public void writeExternal(ObjectOutput out) throws IOException {
 		out.writeUTF(name);
 		out.writeInt(roll);
+	}
+	
+	@Override
+	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+		this.name = in.readUTF();
+		this.roll = in.readInt();
 	}
 	
 	public String getName() {

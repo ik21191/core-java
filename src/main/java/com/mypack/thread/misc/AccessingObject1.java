@@ -1,9 +1,25 @@
-package com.mypack.thread;
+package com.mypack.thread.misc;
 
 import org.apache.log4j.Logger;
 
+class SynchronizedObject1 {
+	private int count = 0;
+
+	public synchronized void increment() {
+		count++;
+	}
+
+	public synchronized void decrement() {
+		count--;
+	}
+
+	public int display() {
+		return count;
+	}
+}
+
 public class AccessingObject1 implements Runnable {
-	Logger log = Logger.getLogger(AccessingObject1.class);
+	private static Logger log = Logger.getLogger(AccessingObject1.class);
 	
     SynchronizedObject1 syn = new SynchronizedObject1();
     @Override
@@ -14,9 +30,7 @@ public class AccessingObject1 implements Runnable {
             }catch(Exception e){
                 log.error(e);
             }
-            
             log.info("Thread name : " + Thread.currentThread().getName() + "    " + syn.display());
-            
         }
     }
     public static void main(String arr[])throws Exception {
@@ -24,6 +38,6 @@ public class AccessingObject1 implements Runnable {
         Thread t2 = new Thread(new AccessingObject1(), " Thread_2");
         t1.start();
         t2.start();
-        Thread.currentThread().join();
+        log.info("completed.");
     }
 }
