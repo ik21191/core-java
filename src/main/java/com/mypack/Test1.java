@@ -15,5 +15,6 @@ public class Test1 {
        
         //log.info(TestJar.testMethod());
     	//This is conflict check
+    	//This is navi changes
     }
 }
