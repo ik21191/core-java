@@ -18,9 +18,13 @@ public class CalculateAge {
 		log.info("Year: " + p.getYears() + ", Month: " + p.getMonths() + ", Day: " + p.getDays());
 		
 		String dateTime = LocalDateTime.now(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		log.info(dateTime);
 		
+		int year = 2015;
+		int month = 12;
+		int day = 22;
 		
-		System.out.println(dateTime);
+		LocalDate date = LocalDate.of(year, month, day);
+		log.info("My Customized date is: " + date);
 	}
-
 }
