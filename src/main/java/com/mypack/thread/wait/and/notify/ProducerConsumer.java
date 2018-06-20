@@ -10,7 +10,7 @@ class Producer implements Runnable
 	private static final Logger log = Logger.getLogger(Producer.class);
 	
    private final List<Integer> taskQueue;
-   private final int  MAX_CAPACITY;
+   private final int MAX_CAPACITY;
  
    public Producer(List<Integer> sharedQueue, int size)
    {
@@ -37,7 +37,7 @@ class Producer implements Runnable
  
    private void produce(int i) throws InterruptedException
    {
-      synchronized (taskQueue)
+      synchronized(taskQueue)
       {
          while (taskQueue.size() == MAX_CAPACITY)
          {

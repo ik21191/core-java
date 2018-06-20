@@ -27,7 +27,7 @@ class SharedObject2 {
 
 class TryLockThread implements Runnable {
 	private static final Logger log = Logger.getLogger(TryLockThread.class);
-	Lock lock;
+	private Lock lock;
 	private SharedObject2 sharedObject2;
 
 	public TryLockThread(SharedObject2 sharedObject2, Lock lock) {

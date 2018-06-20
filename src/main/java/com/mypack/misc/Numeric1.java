@@ -1,4 +1,4 @@
-package com.mypack.test1;
+package com.mypack.misc;
 public class Numeric1 extends Thread
 {
     public  synchronized void display()throws Exception

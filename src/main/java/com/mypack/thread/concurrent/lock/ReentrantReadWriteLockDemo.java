@@ -8,9 +8,9 @@ import org.apache.log4j.Logger;
 
 class SharedObject {
 	private static final Logger log = Logger.getLogger(SharedObject.class);
-	ReadWriteLock rwLock = new ReentrantReadWriteLock();
-	Lock readLock = rwLock.readLock();
-	Lock writeLock = rwLock.writeLock();
+	private ReadWriteLock rwLock = new ReentrantReadWriteLock();
+	private Lock readLock = rwLock.readLock();
+	private Lock writeLock = rwLock.writeLock();
 	
 	public void read() {
 		readLock.lock();
@@ -20,7 +20,6 @@ class SharedObject {
 				log.info("read(): Thread Name: " + Thread.currentThread().getName() + "  Reading: " + i);
 				Thread.sleep(1000);
 			}
-
 		} catch (InterruptedException e) {
 			log.error(e);
 		} finally {

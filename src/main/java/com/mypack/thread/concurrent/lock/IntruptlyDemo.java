@@ -30,7 +30,7 @@ class InterruptThread implements Runnable {
 		try {
 			for(int i = 1; i <= 5; i++) {
 				log.info("Thread Name: " + Thread.currentThread().getName() + ": Reading: " + i);
-				Thread.sleep(1000);
+				Thread.sleep(500);
 			}
 		} catch(Exception e) {
 			log.error(e);
@@ -50,5 +50,7 @@ public class IntruptlyDemo {
 		t1.start();
 		t2.start();
 		t3.start();
+		
+		
 	}
 }
