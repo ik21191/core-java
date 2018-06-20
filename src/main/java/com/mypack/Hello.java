@@ -10,7 +10,6 @@ public class Hello {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		//This is test
 		String str = "/rest/document/7932890?logAccess=true";
 		if(str.equals("/rest/document/7932890?logAccess=true")) {
 			System.out.println("both are equals" + "\t" + str.compareTo("/rest/document/7932890?logAccess=true"));

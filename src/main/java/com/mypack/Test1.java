@@ -13,8 +13,6 @@ public class Test1 {
 	private static final Logger log = Logger.getLogger(Test1.class);
     public static void main(String[] args) {
        
-        //log.info(TestJar.testMethod());
-    	//This is conflict check
-    	//This is navi changes
+        log.info(TestJar.testMethod());
     }
 }
