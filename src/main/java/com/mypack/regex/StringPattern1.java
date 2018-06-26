@@ -1,4 +1,4 @@
-package com.mypack.net;
+package com.mypack.regex;
 public class StringPattern1 
 {
 	public static void main(String[] args) 
