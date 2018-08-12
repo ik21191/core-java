@@ -2,17 +2,15 @@ package com.mypack.overriding;
 
 import java.io.FileNotFoundException;
 
-class A1
-{
-    public void print()throws FileNotFoundException {//It is checked exception
+class A1 {
+    protected void print()throws FileNotFoundException {//It is checked exception
         System.out.println("print() of A1");
     }
-    public void display()throws NullPointerException {//It is UnChecked exception
+    protected void display()throws NullPointerException {//It is UnChecked exception
         System.out.println("display() of A1");
     }
 }
-class B extends A1
-{
+class B extends A1 {
     public void print() {
         System.out.println("print() of B");
     }
@@ -20,10 +18,8 @@ class B extends A1
         System.out.println("display() of B1");
     }
 }
-public class TestWithException1 
-{
-    public static void main(String arr[])
-    {
+public class TestWithException1 {
+    public static void main(String arr[]) {
         B b = new B();
         A1 a = new B();
         b.print();

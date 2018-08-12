@@ -10,6 +10,9 @@ class GenericTest<T1, T2> {
 	}
 	
 	public void display() {
+		if(t1 instanceof String) {
+			System.out.println("T1 is String");
+		}
 		System.out.println("T1 is: " + t1);
 		System.out.println("T2 is: " + t2);
 	}

@@ -5,8 +5,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-class Producer implements Runnable
-{
+class Producer implements Runnable {
 	private static final Logger log = Logger.getLogger(Producer.class);
 	
    private final List<Integer> taskQueue;
@@ -19,28 +18,20 @@ class Producer implements Runnable
    }
  
    @Override
-   public void run()
-   {
-      int counter = 0;
-      while (true)
-      {
-         try
-         {
-            produce(counter++);
-         }
-         catch (InterruptedException ex)
-         {
-            ex.printStackTrace();
-         }
-      }
-   }
+	public void run() {
+		int counter = 0;
+		while (true) {
+			try {
+				produce(counter++);
+			} catch (InterruptedException ex) {
+				ex.printStackTrace();
+			}
+		}
+	}
  
-   private void produce(int i) throws InterruptedException
-   {
-      synchronized(taskQueue)
-      {
-         while (taskQueue.size() == MAX_CAPACITY)
-         {
+   private void produce(int i) throws InterruptedException {
+      synchronized(taskQueue) {
+         while(taskQueue.size() == MAX_CAPACITY) {
             log.info("Queue is full " + Thread.currentThread().getName() + " is waiting , size: " + taskQueue.size());
             taskQueue.wait();
          }
@@ -53,37 +44,28 @@ class Producer implements Runnable
    }
 }
 
-class Consumer implements Runnable
-{
+class Consumer implements Runnable {
 	private static final Logger log = Logger.getLogger(Consumer.class);
    private final List<Integer> taskQueue;
  
-   public Consumer(List<Integer> sharedQueue)
-   {
+   public Consumer(List<Integer> sharedQueue) {
       this.taskQueue = sharedQueue;
    }
  
    @Override
-   public void run()
-   {
-      while (true)
-      {
-         try
-         {
-            consume();
-         } catch (InterruptedException ex)
-         {
-            ex.printStackTrace();
-         }
-      }
-   }
+	public void run() {
+		while (true) {
+			try {
+				consume();
+			} catch (InterruptedException ex) {
+				ex.printStackTrace();
+			}
+		}
+	}
  
-   private void consume() throws InterruptedException
-   {
-      synchronized (taskQueue)
-      {
-         while (taskQueue.isEmpty())
-         {
+   private void consume() throws InterruptedException {
+      synchronized(taskQueue) {
+         while (taskQueue.isEmpty()) {
             log.info("Queue is empty " + Thread.currentThread().getName() + " is waiting , size: " + taskQueue.size());
             taskQueue.wait();
          }
@@ -96,8 +78,7 @@ class Consumer implements Runnable
 }
 
 public class ProducerConsumer {
-	public static void main(String[] args)
-	   {
+	public static void main(String[] args) {
 	      List<Integer> taskQueue = new ArrayList<Integer>();
 	      int MAX_CAPACITY = 5;
 	      Thread tProducer = new Thread(new Producer(taskQueue, MAX_CAPACITY), "Producer");
