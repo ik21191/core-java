@@ -1,4 +1,4 @@
-package com.mypack.net;
+package com.mypack.misc;
 final class X
 {
 	public int a=100;

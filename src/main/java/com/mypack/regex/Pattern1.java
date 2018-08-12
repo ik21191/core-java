@@ -1,4 +1,4 @@
-package com.mypack.net;
+package com.mypack.regex;
 
 import java.util.regex.*;
 

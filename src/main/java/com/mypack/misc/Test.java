@@ -1,4 +1,4 @@
-package com.mypack.net;
+package com.mypack.misc;
 import java.io.*;
 import java.net.*;
 import java.util.*;
