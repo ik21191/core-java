@@ -1,4 +1,4 @@
-package com.mypack.net;
+package com.mypack.misc;
 public class FunctionCall1 
 {
 	static final String S=FunctionCall1.class.getName();
