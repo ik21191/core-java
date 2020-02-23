@@ -133,7 +133,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.fortasoft</groupId>
 				<artifactId>gradle-maven-plugin</artifactId>
 				<version>1.0.5</version>
@@ -158,7 +158,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 </project>
