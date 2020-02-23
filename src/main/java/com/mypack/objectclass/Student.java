@@ -23,11 +23,24 @@ class Address {
 	}
 }
 
-public class Student implements Cloneable  {
+class CategoryType {
+	protected String categoryName;
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+}
+
+public class Student extends CategoryType implements Cloneable  {
 	private String name;
 	private Address address;
 	
-	public Student(String name, Address address) {
+	public Student(String catetoryName, String name, Address address) {
+		this.categoryName = catetoryName;
 		this.name = name;
 		this.address = address;
 	}
