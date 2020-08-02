@@ -14,7 +14,7 @@ class SharedObject {
 	
 	public void read() {
 		readLock.lock();
-		log.info("reading start..");
+		log.info("reading started..");
 		try {
 			for (int i = 1; i <= 5; i++) {
 				log.info("read(): Thread Name: " + Thread.currentThread().getName() + "  Reading: " + i);
@@ -30,7 +30,7 @@ class SharedObject {
 	
 
 	public void write() {
-		log.info("Writing startd ..");
+		log.info("Writing started ..");
 		writeLock.lock();
 		try {
 			for (int i = 1; i <= 5; i++) {
