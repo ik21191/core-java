@@ -29,7 +29,7 @@ public class ResourceUsage implements Runnable {
 			/**Below sharedObject works as a monitor so whenever any method of this object is executing by a thread then this object will 
 			  get the lock on that thread and will release the lock after completion of the method */
 			synchronized (sharedObject) {
-				sharedObject.display();
+				sharedObject.display(); //This display method is non synchronized
 			}
 		} catch (Exception e) {
 			log.error(e);

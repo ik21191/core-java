@@ -24,7 +24,7 @@ public class Reflection1
     }
     public static void main(String arr[])throws Exception
     {
-        Class cls=Class.forName("reflection.Reflection1");
+        Class cls=Class.forName("com.mypack.reflection.Reflection1");
         System.out.println("Getting all the fields of Reflection1 class..............");
         Field[] classFields=cls.getDeclaredFields();
         for(int i=0;i<classFields.length;i++)

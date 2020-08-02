@@ -26,12 +26,14 @@ public class Test1 extends Thread {
 	}
 	void randomWait() {
 		try {
-			Thread.currentThread().sleep((long) (3000 * Math.random()));
+		sleep((long) (3000 * Math.random()));
 		} catch (InterruptedException e) {
+			
+			
 			System.out.println("Interrupted!");
 		}
 	}
-	public synchronized void run() {
+	public void run() {
 		SynchronizedOutput.displayList(getName(), msg);
 	}
 }
