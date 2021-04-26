@@ -1,6 +1,8 @@
 package com.mypack.exceptions;
 
 class MyException extends Exception {
+	private static final long serialVersionUID = 1L;
+
 	public String toString() {
 		return "This is MyException.";
 	}

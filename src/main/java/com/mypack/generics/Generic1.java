@@ -30,17 +30,20 @@ public class Generic1<T>
     }
     public static void main(String a[])
     {
-        Generic1 s=new Generic1();
-        Generic1<Integer> i=new Generic1<Integer>();
-        System.out.println("Printing values of Object s..........");
-        System.out.println("String value is "+s.name);
-        System.out.println("Integer value is "+s.value);
-        System.out.println("Printing values of Object i..........");
+        
+        Generic1<Integer> i = new Generic1<Integer>();
         System.out.println("String value is "+i.name);
         System.out.println("Integer value is "+i.value);
         //i.setT("abc");
         i.setT(10);// No Problem autoboxing
         i.setT(new Integer(10));//No Problem
+        
+        Generic1 s=new Generic1();
+        System.out.println("Printing values of Object s..........");
+        System.out.println("String value is "+s.name);
+        System.out.println("Integer value is "+s.value);
+        System.out.println("Printing values of Object i..........");
+        
         System.out.println("Setting String value.............");
         s.setT("Imran Khan");
         System.out.println("Getting String value............."+s.getT());
