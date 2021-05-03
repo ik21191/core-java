@@ -2,7 +2,10 @@ package com.mypack.exceptions;
 
 import org.apache.log4j.Logger;
 
-class MyAutoCloseable implements AutoCloseable {//We can only use Try-With-Resource if the class implements AutoCloseable
+/***
+ * We can only use Try-With-Resource if the class implements AutoCloseable
+ */
+class MyAutoCloseable implements AutoCloseable {
 	private static final Logger log = Logger.getLogger(MyAutoCloseable.class);
 	@Override
 	public void close() throws Exception {

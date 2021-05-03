@@ -17,8 +17,8 @@ class GenericTest<T1, T2> {
 		if(t1 instanceof String) {
 			log.info("T1 is String");
 		}
-		log.info("T1 is: " + t1);
-		log.info("T2 is: " + t2);
+		log.info("T1 is: " + t1.getClass().getTypeName());
+		log.info("T2 is: " + t2.getClass().getTypeName());
 	}
 }
 
