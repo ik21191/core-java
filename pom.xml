@@ -164,5 +164,6 @@
 <modules>  <module>threading</module>
     <module>java8</module>
     <module>design-pattern</module>
+    <module>basic</module>
   </modules>
 </project>
