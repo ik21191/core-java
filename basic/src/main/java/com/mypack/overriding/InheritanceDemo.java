@@ -1,6 +1,6 @@
 package com.mypack.overriding;
 
-class Y extends com.mypack.misc.Parent {
+class Y extends Parent {
     
 }
 public class InheritanceDemo {

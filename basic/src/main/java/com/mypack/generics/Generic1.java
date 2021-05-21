@@ -26,7 +26,7 @@ public class Generic1<T>
     }
     public Generic1(int x)
     {
-        System.out.println("Default constructor.");
+        System.out.println("Parameterized constructor.");
     }
     public static void main(String a[])
     {
