@@ -1,12 +1,12 @@
-package com.mypack.misc;
-interface A
+package com.mypack;
+interface A1
 {
     interface B
     {
         void display();
     }
 }
-public class ExtendsInterface1 implements A.B
+public class ExtendsInterface1 implements A1.B
 {
     public void display() 
     {
@@ -14,7 +14,7 @@ public class ExtendsInterface1 implements A.B
     }
     public static void main(String arr[])
     {
-        A.B b=new ExtendsInterface1();
+        A1.B b=new ExtendsInterface1();
         b.display();
     }
 }

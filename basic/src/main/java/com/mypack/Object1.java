@@ -1,4 +1,4 @@
-package com.mypack.misc;
+package com.mypack;
 class AA
 {
     public String toString()

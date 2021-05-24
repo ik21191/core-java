@@ -1,4 +1,4 @@
-package com.mypack.static1;
+package com.mypack;
 
 import org.apache.log4j.Logger;
 

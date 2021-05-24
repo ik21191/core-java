@@ -1,4 +1,4 @@
-package com.mypack.basic;
+package com.mypack;
 
 import java.net.URL;
 import java.util.Map;

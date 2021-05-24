@@ -1,11 +1,11 @@
-package com.mypack.misc;
-final class X
+package com.mypack;
+final class X1
 {
 	public int a=100;
 }
 public class BoxingUnboxing1 
 {
-	X x=new X();
+	X1 x=new X1();
 	public void display(Integer i)
 	{
 		System.out.println(i.toString());

@@ -1,4 +1,4 @@
-package com.mypack.misc;
+package com.mypack;
 public class Inner1 
 {
 	public void print()

@@ -1,4 +1,4 @@
-package com.mypack.misc;
+package com.mypack;
 public class MultipleStaticBlock1 
 {
     static String s1,s2;

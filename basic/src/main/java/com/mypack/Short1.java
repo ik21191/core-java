@@ -1,4 +1,4 @@
-package com.mypack.basic;
+package com.mypack;
 public class Short1 {
 	public static void main(String[] args) {
 		byte a=127;//a=127+ will show an error at compile time

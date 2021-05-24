@@ -1,4 +1,4 @@
-package com.mypack.basic;
+package com.mypack;
 class Animal 
 {
     void makeNoise() {System.out.println("generic noise"); }

@@ -1,4 +1,4 @@
-package com.mypack.misc;
+package com.mypack;
 public class Loop1
 {
     public static void callLoop(int i)

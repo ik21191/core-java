@@ -1,4 +1,4 @@
-package com.mypack.misc;
+package com.mypack;
 interface MyInterface
 {
     public void display(Object t);
