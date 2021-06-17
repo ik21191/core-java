@@ -14,8 +14,10 @@ class MyCallable implements Callable<Integer> {
 	
 	@Override
 	public Integer call() throws Exception {
-		Thread.sleep(500);
-		return new Random().nextInt(1000);
+		Thread.sleep(3000);
+		int result = new Random().nextInt(1000);
+		System.out.println("Random number is : " + result);
+		return result;
 	}
 }
 
@@ -43,6 +45,7 @@ public class CallableFutureDemo {
 		
 		for(Future<Integer> future : futureList) {
 			log.info(future.get());
+			Thread.sleep(3000);
 		}
 	}
 }
