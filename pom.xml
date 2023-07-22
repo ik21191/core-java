@@ -119,6 +119,13 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.5</version>
 		</dependency>
+		
+		<!-- https://picocli.info/ -->
+		<dependency>
+			<groupId>info.picocli</groupId>
+			<artifactId>picocli</artifactId>
+			<version>4.6.3</version>
+		</dependency>
 
 	</dependencies>
 	<build>
