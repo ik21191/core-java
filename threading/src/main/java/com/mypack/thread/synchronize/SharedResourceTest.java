@@ -4,6 +4,9 @@ class SharedObject {
 	will have to wait till completion of this method as the whole object is locked for that particular method. Non synchronized method
 	will not have lock*/
 	
+	/*method3 is not synchronized and we don't have object level lock, in that case if any thread can
+	 * call method3 even other thread is executing in synchronized method*/
+	
 	public void method1() {
 		synchronized (this) {
 			System.out.println("method1 start");
@@ -32,6 +35,12 @@ class SharedObject {
 	
 	public synchronized void method2() {
 		synchronized (this) {
+			try {
+				Thread.sleep(6000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println("method2 start");
 			System.out.println("method2 end");
 		}
@@ -42,6 +51,11 @@ class SharedObject {
 		System.out.println("method2 start");
 		System.out.println("method2 end");
 	}*/
+	
+	public void method3() {
+		System.out.println("method3 start");
+		System.out.println("method3 end");
+	}
 }
 
 class T1 implements Runnable {
@@ -65,12 +79,26 @@ class T2 implements Runnable {
 		sharedObject.method2();
 	}
 }
+
+class T8 implements Runnable {
+	private SharedObject sharedObject;
+	public T8(SharedObject sharedObject) {
+		this.sharedObject = sharedObject; 
+	}
+	@Override
+	public void run() {
+		sharedObject.method3();
+	}
+}
 public class SharedResourceTest {
-	public static void main(String arr[]) {
+	public static void main(String arr[]) throws Exception {
 		SharedObject sharedObject = new SharedObject();
 		Thread t1 = new Thread(new T1(sharedObject), "Thread1");
 		Thread t2 = new Thread(new T2(sharedObject), "Thread2");
 		t1.start();
 		t2.start();
+		Thread.sleep(2000);
+		Thread t3 = new Thread(new T8(sharedObject), "Thread3");
+		t3.start();
 	}
 }

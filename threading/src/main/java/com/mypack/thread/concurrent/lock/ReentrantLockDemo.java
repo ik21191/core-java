@@ -9,7 +9,7 @@ class SharedObject1 {
 	ReentrantLock lock = new ReentrantLock();
 	
 	public void read1() {
-		//below statement is executed before the lock so both thread can access this concurrenly
+		//below statement is executed before the lock so both thread can access this concurrently
 		log.info("read()1: Thread Name: " + Thread.currentThread().getName() + ": reading start..");
 		log.info("read()1: Thread Name: " + Thread.currentThread().getName() + ": is hold by other thread: " + lock.getHoldCount());
 		
@@ -32,7 +32,7 @@ class SharedObject1 {
 	}
 	
 	public void read2() {
-		//below statement is executed before the lock so both thread can access this concurrenly
+		//below statement is executed before the lock so both thread can access this concurrently
 		log.info("read()2: Thread Name: " + Thread.currentThread().getName() + ": reading start..");
 		log.info("read()2: Thread Name: " + Thread.currentThread().getName() + ": is hold by other thread: " + lock.getHoldCount());
 		

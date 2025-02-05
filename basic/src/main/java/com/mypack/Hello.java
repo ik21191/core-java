@@ -48,6 +48,16 @@ public class Hello {
 		String url = "ldjldjljljlkjenterprise.astm.orgdjljlkjdljdl";
 		System.out.println("check url " + url.contains("enterprise.astm.org"));
 		
+		int a = 4;
+		System.out.println(Integer.toBinaryString(a));
+		int c = a>>1;
+		System.out.println("c " + c);
+		System.out.println("c>>1 " + Integer.toBinaryString(c));
+		
+		System.out.println(9000>>1);
+		
+		Integer[] a22 = new Integer[100000*10000*1000*1000*1000];
+		
 	}
 	
 	

@@ -18,7 +18,7 @@ class MyRandomNumber {
 
 class MyTask implements Runnable {
 	private static final Logger log = Logger.getLogger(MyTask.class);
-	private static ThreadLocal<MyRandomNumber> threadLocal = new ThreadLocal<MyRandomNumber>(){
+	private ThreadLocal<MyRandomNumber> threadLocal = new ThreadLocal<MyRandomNumber>(){
 		@Override
 		protected MyRandomNumber initialValue() {
 			return new MyRandomNumber();
