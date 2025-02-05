@@ -1,4 +1,4 @@
-package com.mypack.design.pattern.structural.decorator;
+package structural.decorator;
 interface Shape {
 	void draw();
 }

@@ -1,4 +1,4 @@
-package com.mypack.daopattern;
+package daopattern;
 import java.util.List;
 public class StudentDaoImple implements StudentDao
 {

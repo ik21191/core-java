@@ -1,4 +1,4 @@
-package com.mypack.design.pattern.structural.adaptor;
+package structural.adaptor;
 
 import org.apache.log4j.Logger;
 

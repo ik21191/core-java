@@ -1,4 +1,4 @@
-package com.mypack.design.patter.creational.factory;
+package creational.factory;
 
 import org.apache.log4j.Logger;
 

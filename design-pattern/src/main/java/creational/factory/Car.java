@@ -1,4 +1,4 @@
-package com.mypack.design.patter.creational.factory;
+package creational.factory;
 
 public abstract class Car {
 	   

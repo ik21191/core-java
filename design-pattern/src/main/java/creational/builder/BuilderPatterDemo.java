@@ -1,4 +1,4 @@
-package com.mypack.design.pattern.builder;
+package creational.builder;
 
 public class BuilderPatterDemo {
 

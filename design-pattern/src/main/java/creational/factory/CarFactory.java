@@ -1,4 +1,4 @@
-package com.mypack.design.patter.creational.factory;
+package creational.factory;
 
 public class CarFactory {
 	public static Car buildCar(CarType model) {

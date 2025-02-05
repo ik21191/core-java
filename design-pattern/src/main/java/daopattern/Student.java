@@ -1,4 +1,4 @@
-package com.mypack.daopattern;
+package daopattern;
 public class Student 
 {
     private String name;

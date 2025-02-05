@@ -1,4 +1,4 @@
-package com.mypack.daopattern;
+package daopattern;
 public class Use1 {
     public static void main(String arr[]) {
         StudentDao imp = new StudentDaoImple();
