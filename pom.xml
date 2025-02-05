@@ -4,7 +4,7 @@
 	<groupId>com.mypack</groupId>
 	<artifactId>maven-core-test1</artifactId>
 	<packaging>pom</packaging>
-	<version>2.0-SNAPSHOT</version>
+	<version>3.0-SNAPSHOT</version>
 	<name>maven-core-test1</name>
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -119,6 +119,22 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.5</version>
 		</dependency>
+		
+		<!-- https://picocli.info/ -->
+		<dependency>
+			<groupId>info.picocli</groupId>
+			<artifactId>picocli</artifactId>
+			<version>4.6.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.28</version>
+		    <scope>provided</scope>
+		</dependency>
+		
+
 
 	</dependencies>
 	<build>

@@ -22,6 +22,10 @@ class Producer implements Runnable {
 		int counter = 0;
 		while (true) {
 			try {
+				/*If we uncomment below code then producer will produce one element and then 
+				 * consumer will consume that element, means the operation will be like 
+				 * adding and element and deleting element*/
+				//Thread.sleep(1000);
 				produce(counter++);
 			} catch (InterruptedException ex) {
 				ex.printStackTrace();
@@ -34,12 +38,16 @@ class Producer implements Runnable {
          while(taskQueue.size() == MAX_CAPACITY) {
             log.info("Queue is full " + Thread.currentThread().getName() + " is waiting , size: " + taskQueue.size());
             taskQueue.wait();
+            System.out.println("Producer woke up.");
          }
            
          Thread.sleep(1000);
          taskQueue.add(i);
          log.info("Produced: " + i);
-         taskQueue.notifyAll();
+         /*Since we have only one Producer and one Consumer then notify() will works fine
+          * if we have multiple producer and consumer then we need to call notifyAll()*/
+         taskQueue.notify();
+         //taskQueue.notifyAll();
       }
    }
 }
@@ -68,11 +76,15 @@ class Consumer implements Runnable {
          while (taskQueue.isEmpty()) {
             log.info("Queue is empty " + Thread.currentThread().getName() + " is waiting , size: " + taskQueue.size());
             taskQueue.wait();
+            System.out.println("Consumer woke up.");
          }
          Thread.sleep(1000);
          int i = (Integer) taskQueue.remove(0);
          log.info("Consumed: " + i);
-         taskQueue.notifyAll();
+         /*Since we have only one Producer and one Consumer then notify() will works fine
+          * if we have multiple producer and consumer then we need to call notifyAll()*/
+         taskQueue.notify();
+         //taskQueue.notifyAll();
       }
    }
 }
