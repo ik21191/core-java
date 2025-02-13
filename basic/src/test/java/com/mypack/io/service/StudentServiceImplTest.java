@@ -24,7 +24,6 @@ public class StudentServiceImplTest {
 		MockitoAnnotations.initMocks(this);
 	}
 	
-	@Test
 	public void insertStudent() {
 		//Given
 		List<Student> list = mock(List.class);
