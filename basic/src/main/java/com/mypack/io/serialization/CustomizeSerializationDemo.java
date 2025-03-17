@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 class Employee implements Serializable {
 	
@@ -85,10 +87,25 @@ class Employee implements Serializable {
 }
 public class CustomizeSerializationDemo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Employee employee = new Employee(1001L, "Imran Khan", "16-05-84");
 		saveObject(employee);
 		readObject();
+		
+		List<Employee> empList = new ArrayList<>();
+		empList.add(new Employee(1001L, "Imran Khan", "16-05-84"));
+		empList.add(new Employee(1002L, "Imran Khan", "16-05-84"));
+		empList.add(new Employee(1003L, "Imran Khan", "16-05-84"));
+		
+		ObjectOutputStream outLiStream = new ObjectOutputStream(new FileOutputStream("list.ser"));
+		outLiStream.writeObject(empList);
+		
+		ObjectInputStream inLInputStream = new ObjectInputStream(new FileInputStream("list.ser"));
+		empList = (List<Employee>)inLInputStream.readObject();
+		
+		empList.forEach(emp -> System.out.println(emp));
+		
+		outLiStream.close();inLInputStream.close();
 	}
 
 	private static void saveObject(Serializable object) {
