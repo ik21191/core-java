@@ -192,5 +192,6 @@
 		<module>java8</module>
 		<module>design-pattern</module>
 		<module>basic</module>
-	</modules>
+    <module>collection</module>
+  </modules>
 </project>

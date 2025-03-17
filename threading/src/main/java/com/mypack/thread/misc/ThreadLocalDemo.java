@@ -30,7 +30,7 @@ class MyTask implements Runnable {
 		threadLocal.set(new MyRandomNumber());
 		try {
 			log.info("Thread Name: " + Thread.currentThread().getName() + " Generating number");
-			threadLocal.get().setNumber(new Random().nextInt(100000));
+			threadLocal.get().setNumber(new Random().nextInt(3));
 			Thread.sleep(3000);
 			log.info("Thread Name: " + Thread.currentThread().getName() + " Generated number");
 		} catch (InterruptedException e) {
