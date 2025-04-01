@@ -8,9 +8,11 @@ public class EmptyListOfCollections1
 		//fixedSizeList.add("Rahul");//throw UnsupportedOperationException
 		List<String> normalList = new ArrayList<>();
 		normalList.add("ABC");
+		
+		//Creating immutable, singleTon, empty list
 		List<String> list = Collections.emptyList();
 		//list = normalList;
-		list.add("Imran");
+		list.add("Imran");////throw UnsupportedOperationException
 		System.out.println(list.size());
     }
 }
