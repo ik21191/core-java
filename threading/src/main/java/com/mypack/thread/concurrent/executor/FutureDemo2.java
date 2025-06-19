@@ -5,12 +5,19 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-
-
 public class FutureDemo2 {
 	private static int counter = 0;
 
 	public static void main(String[] args) throws Exception {
+	  Runnable runnable = ()-> {
+        System.out.println("run() method is called.");
+        try {
+          Thread.sleep(5000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+ 
+	  };
 		Callable<Integer> callable = ()-> {
 			System.out.println("call() method is called.");
 			Thread.sleep(5000);
@@ -19,7 +26,12 @@ public class FutureDemo2 {
 		
 		ExecutorService service = Executors.newFixedThreadPool(2);
 		Future<Integer> future = service.submit(callable);
-		//future.get();
+		System.out.println(future.get());
+		
+		//submit using Runnable
+		Future<?> f = service.submit(runnable);
+        System.out.println(f.get()); //It will return null
+		
 		service.shutdown();
 		/*
 		 * while(!future.isDone()) { System.out.println("Task not completed");

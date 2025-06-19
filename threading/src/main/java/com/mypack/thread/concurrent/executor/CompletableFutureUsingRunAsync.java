@@ -3,7 +3,7 @@ package com.mypack.thread.concurrent.executor;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
-public class CompletableFutureDemo {
+public class CompletableFutureUsingRunAsync {
 
 	public static void main(String[] args) throws Exception {
 		
@@ -16,14 +16,14 @@ public class CompletableFutureDemo {
 		        } catch (InterruptedException e) {
 		            throw new IllegalStateException(e);
 		        }
-		        System.out.println("I'll run in a separate thread than the main thread.");
+		        System.out.println(Thread.currentThread().getName() + " I'll run in a separate thread than the main thread.");
 		    }
 		});
 
 		// Block and wait for the future to complete
 		future.get();
 		
-		System.out.println("Done");
+		System.out.println(Thread.currentThread().getName() + " Done");
 
 	}
 

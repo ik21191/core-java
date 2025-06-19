@@ -199,6 +199,7 @@
 		<module>java8</module>
 		<module>design-pattern</module>
 		<module>basic</module>
-    <module>collection</module>
+    	<module>collection</module>
+    	<module>junit5-mockito</module>
   </modules>
 </project>

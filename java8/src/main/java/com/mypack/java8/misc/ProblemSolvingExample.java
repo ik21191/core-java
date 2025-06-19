@@ -59,7 +59,7 @@ public class ProblemSolvingExample {
     
     // List<Integer> list = Arrays.stream(ints).boxed().toList();
     
-    System.out.println("\nsecondHighestWay11() output : "
+    System.out.println("\nsecondHighestWay1() output : "
         + Arrays.stream(ints).boxed().sorted(Comparator.reverseOrder()).skip(1).findFirst().get());
   }
 
@@ -67,8 +67,8 @@ public class ProblemSolvingExample {
     // convert primitive array to Integer array
 
     // IntFunction<Integer[]> intFunction = ints-> return Integer[];
-    Integer[] integers = Arrays.stream(ints).boxed().toArray(Integer[]::new);
-    System.out.println("\nsecondHighestWay2() output : " + integers[2]);
+    Integer[] integers = Arrays.stream(ints).boxed().sorted(Comparator.reverseOrder()).toArray(Integer[]::new);
+    System.out.println("\nsecondHighestWay2() output : " + integers[1]);
   }
   
   private static void findNumberOfCount() {

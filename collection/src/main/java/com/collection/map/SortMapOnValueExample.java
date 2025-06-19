@@ -32,9 +32,9 @@ public class SortMapOnValueExample {
 
   }
 
-  private static Map<String, String> sortByComparator(Map unsortMap) {
+  private static Map<String, String> sortByComparator(Map<String, String> unsortMap) {
 
-    Set<java.util.Map.Entry<String, String>> list = unsortMap.entrySet();
+    Set<Map.Entry<String, String>> list = unsortMap.entrySet();
 
     Comparator<Map.Entry<String, String>> comparator = new Comparator<Map.Entry<String, String>>() {
       @Override
@@ -43,7 +43,11 @@ public class SortMapOnValueExample {
       }
     };
 
-    List<Entry<String, String>> sortedList = list.stream().sorted(comparator).collect(Collectors.toList());
+    //List<Entry<String, String>> sortedList = list.stream().sorted(comparator).collect(Collectors.toList());
+    
+     List<Entry<String, String>> sortedList = list.stream()
+         .sorted(Map.Entry.comparingByValue()).collect(Collectors.toList());
+    
 
     // put sorted list into map again //LinkedHashMap make sure order in which keys were inserted
     Map<String, String> sortedMap = new LinkedHashMap<>();
