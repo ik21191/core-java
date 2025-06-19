@@ -13,20 +13,22 @@ public class InterruptDemo extends Thread {
 	public void run() {
 		log.info(Thread.currentThread().getName() + " run() is called. Waiting for completion");
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			log.info(e);
 		}
 		System.out.println(Thread.currentThread().getName() + " Completed");
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		InterruptDemo interruptDemo = new InterruptDemo("Thread1");
 		interruptDemo.start();
 		
+		Thread.sleep(1000);
 		interruptDemo.interrupt();
 		log.info(interruptDemo.isInterrupted());
 		log.info(Thread.currentThread().getName() + "Completed");
+		interruptDemo.start();
 
 	}
 

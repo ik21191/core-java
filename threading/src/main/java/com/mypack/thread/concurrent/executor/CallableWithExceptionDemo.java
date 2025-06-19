@@ -52,8 +52,8 @@ public class CallableWithExceptionDemo {
 		for(Future<Integer> future : futureList) {
 			try {
 				/**
-				 * If we don't make the call to the get() method of Future class – then the exception thrown by call() method will not be reported back,
-				 *  and the task will still be marked as completed*/
+				 * If we don't make the call to the get() method of Future class – then the exception thrown by call() 
+				 * method will not be reported back, and the task will still be marked as completed*/
 				int result = future.get();
 				System.out.println(result);
 				Thread.sleep(3000);

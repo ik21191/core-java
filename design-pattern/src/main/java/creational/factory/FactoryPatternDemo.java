@@ -1,12 +1,12 @@
 package creational.factory;
 
 public class FactoryPatternDemo {
-	public static void main(String arg[]) {
-		Mobile mobile1 = MobileFactory.createMobile("IPhone");
-		mobile1.mobileBrand();
-		Mobile mobile2 = MobileFactory.createMobile("OnePlus");
-		mobile2.mobileBrand();
-		Mobile mobile3 = MobileFactory.createMobile("Sony");
-		mobile3.mobileBrand();
-	}
+  public static void main(String arg[]) {
+    Mobile iphone = MobileFactory.createMobile("IPhone");
+    iphone.mobileBrand();
+    Mobile onePlus = MobileFactory.createMobile("OnePlus");
+    onePlus.mobileBrand();
+    Mobile sony = MobileFactory.createMobile("Sony");
+    sony.mobileBrand();
+  }
 }

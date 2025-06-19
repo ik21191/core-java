@@ -30,5 +30,10 @@ public class Person implements Serializable {
 		log.info("toString() is called");
 		return "Person Name: " + name + "\tPerson Address: " + add.name + "\t staticField : " + staticField;
 	}
-
+	
+	// implement readResolve method
+    protected Object readResolve() {
+      System.out.println("\n::::::::::::::::::: readResolve() method is called. ::::::::::::::::\n");
+      return this; 
+    }
 }

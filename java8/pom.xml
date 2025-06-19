@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.mypack</groupId>
-    <artifactId>maven-core-test1</artifactId>
+    <artifactId>core-java</artifactId>
     <version>3.0-SNAPSHOT</version>
   </parent>
   <groupId>com.mypack.java8</groupId>
