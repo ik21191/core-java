@@ -1,22 +1,13 @@
 package com.mypack.java8.misc;
 
-import java.lang.invoke.CallSite;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.function.Function;
-import java.util.function.IntFunction;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import com.itextpdf.text.log.SysoCounter;
-import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
-import com.mysql.cj.x.protobuf.MysqlxCrud.Collection;
-import lombok.val;
 
 public class ProblemSolvingExample {
   
