@@ -3,7 +3,7 @@ package com.mypack.exceptions;
 public class FunctionCall1 {
 	public static int get() {
 		try {
-			// throw new Exception();
+			//System.out.println(1/0);
 			return 1;
 
 			// System.out.println("Unreachable code: compile time error");
@@ -21,3 +21,11 @@ public class FunctionCall1 {
 		System.out.println(get());
 	}
 }
+
+/** output
+
+finally block
+1
+
+*/
+

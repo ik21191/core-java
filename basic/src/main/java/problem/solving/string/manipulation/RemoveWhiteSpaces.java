@@ -1,4 +1,4 @@
-package com.mypack.string.logic;
+package problem.solving.string.manipulation;
 
 class RemoveWhiteSpaces
 {

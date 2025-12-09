@@ -10,9 +10,11 @@ public class ListCapacityCheck1 {
     /**
      * Initial capacity should be a positive value //List<String> list = new ArrayList<>(-1);
      */
-    List<String> list = new ArrayList<>(0);
+    List<String> list = new ArrayList<>(10);
 
-    list.add("Imran Khan");
+    list.add(0, "Imran Khan");
+    list.add(0, "Vinay");
+    list.remove(0);
 
     String str = "imran,khan";
     String[] split = str.split(":");

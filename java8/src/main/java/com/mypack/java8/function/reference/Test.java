@@ -36,21 +36,25 @@ public class Test {
     });
     // list.forEach(System.out::println);
 
-    // Before Java8 start
-    /*
-     * Predicate<Integer> isOdd = new Predicate<Integer>() {
-     * 
-     * @Override public boolean test(Integer number) { return IntPredicates.isOdd(number); } };
-     * System.out.println(isOdd.test(1));
-     */
-    // Before Java8 end
+    /** Before Java8 start
+    
+    Predicate<Integer> isOdd = new Predicate<Integer>() {
 
-    // Using Lamda start
-    /*
-     * Predicate<Integer> isOdd = number -> IntPredicates.isOdd(number);
-     * System.out.println(isOdd.test(1));
-     */
-    // Using Lamda end
+      @Override
+      public boolean test(Integer number) {
+        return IntPredicates.isOdd(number);
+      }
+    };
+    System.out.println(isOdd.test(1));
+     
+    Before Java8 end **/
+
+    /** Using Lamda start
+    
+     Predicate<Integer> isOdd = number -> IntPredicates.isOdd(number);
+     System.out.println(isOdd.test(1));
+
+    Using Lamda end **/
 
     // Using static method call reference start
     Predicate<Integer> isOdd = IntPredicates::isOdd;

@@ -25,8 +25,7 @@ public class ImmutableTest {
 
     log.info("Studen year : " + immutableStudent.getAge().getYear());
     age.setYear(1990); // Change the constructor and see the result
-    immutableStudent.getAge().setYear(1990);// change the getter method implementation and see the
-                                            // result
+    immutableStudent.getAge().setYear(1990);// change the getter method implementation and see the result
     log.info("Studen year : " + immutableStudent.getAge().getYear());
 
     log.info("Courses : " + immutableStudent.getCourses());
@@ -45,9 +44,13 @@ final class ImmutableStudent {
   private final List<String> courses;
 
   /*
-   * public ImmutableStudent(int id, String name, Age age, List<String> courses) { this.name = name;
-   * this.id = id; this.age = age; this.courses = courses; }
-   */
+  public ImmutableStudent(int id, String name, Age age, List<String> courses) {
+    this.name = name;
+    this.id = id;
+    this.age = age;
+    this.courses = courses;
+  }
+  */
 
   /*** Constructor for Immutable class, where we are creating clone object of Mutable object: Age */
   public ImmutableStudent(int id, String name, Age age, List<String> courses) {

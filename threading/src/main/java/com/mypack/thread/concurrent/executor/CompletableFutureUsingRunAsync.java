@@ -19,6 +19,8 @@ public class CompletableFutureUsingRunAsync {
 		        System.out.println(Thread.currentThread().getName() + " I'll run in a separate thread than the main thread.");
 		    }
 		});
+		
+		future.thenRunAsync(()->System.out.println("Executed using thenRunAsync()"));
 
 		// Block and wait for the future to complete
 		future.get();

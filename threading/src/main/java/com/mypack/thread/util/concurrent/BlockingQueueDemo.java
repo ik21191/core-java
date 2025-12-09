@@ -56,11 +56,11 @@ public class BlockingQueueDemo {
 
 	public static void main(String[] args) {
 		BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(3);
-		Thread t1 = new Thread(new ProducerBlockingQueue(blockingQueue), "Producer");
-		Thread t2 = new Thread(new ConsumerBlockingQueue(blockingQueue), "Consumer");
+		Thread producer = new Thread(new ProducerBlockingQueue(blockingQueue), "Producer");
+		Thread consumer = new Thread(new ConsumerBlockingQueue(blockingQueue), "Consumer");
 		
-		t1.start();
-		t2.start();
+		producer.start();
+		consumer.start();
 	}
 
 }

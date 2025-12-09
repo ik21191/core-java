@@ -1,4 +1,4 @@
-package com.mypack.string.logic;
+package problem.solving.string.manipulation;
 public class String1 {
     public static void main(String arr[]) {
         String name="imran";

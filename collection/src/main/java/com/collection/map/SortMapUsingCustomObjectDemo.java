@@ -17,8 +17,9 @@ public class SortMapUsingCustomObjectDemo {
     map.put(new Key1(103, "Tina"), new Value(204, "Hello"));
     
     Comparator<Map.Entry<Key1, Value>> com = Map.Entry.comparingByKey((o1, o2) -> o1.getId() - o2.getId());
-    map.entrySet().stream().sorted(com).collect(Collectors.toList()).
-    forEach(entry->System.out.println("key id: " + entry.getKey().getId() + "  value id: " + entry.getValue().getId()));
+    
+    map.entrySet().stream().sorted(com).collect(Collectors.toList())
+    .forEach(entry->System.out.println("key id: " + entry.getKey().getId() + "  value id: " + entry.getValue().getId()));
   }
 }
 

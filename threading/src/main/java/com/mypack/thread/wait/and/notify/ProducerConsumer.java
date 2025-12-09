@@ -23,10 +23,10 @@ class Producer implements Runnable {
       try {
         /*
          * If we uncomment below code then producer will produce one element and then consumer will
-         * consume that element, means the operation will be like adding and element and deleting
+         * consume that element, means the operation will be like adding an element and deleting
          * element
          */
-        // Thread.sleep(1000);
+         Thread.sleep(1000);
         produce(counter++);
       } catch (InterruptedException ex) {
         ex.printStackTrace();
