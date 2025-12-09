@@ -1,4 +1,4 @@
-package com.mypack.string.logic;
+package problem.solving.string.manipulation;
 public class ExtractString1
 {
     public static void main(String ar[])throws Exception {

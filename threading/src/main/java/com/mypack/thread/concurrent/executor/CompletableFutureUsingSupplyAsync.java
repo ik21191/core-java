@@ -22,8 +22,8 @@ public class CompletableFutureUsingSupplyAsync {
   });
 
   transformedFuture.thenAccept(result -> System.out.println(Thread.currentThread().getName() + " Result: " + result));
-  transformedFuture.join();
-  //System.out.println(Thread.currentThread().getName() + "  " + transformedFuture.get());
+  //transformedFuture.join();
+  System.out.println(Thread.currentThread().getName() + "  " + transformedFuture.get());
 
   // The main thread doesn't block while the asynchronous tasks are running.
   }

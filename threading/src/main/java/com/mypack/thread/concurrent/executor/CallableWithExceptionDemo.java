@@ -20,7 +20,7 @@ class MyCallable1 implements Callable<Integer> {
 	
 	@Override
 	public Integer call() throws NumberFormatException, InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		int i = Integer.parseInt(number); 
 		System.out.println("i :  " + i);
 		return i;

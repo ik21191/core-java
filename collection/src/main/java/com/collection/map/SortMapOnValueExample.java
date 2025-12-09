@@ -1,6 +1,5 @@
 package com.collection.map;
 
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -34,19 +33,21 @@ public class SortMapOnValueExample {
 
   private static Map<String, String> sortByComparator(Map<String, String> unsortMap) {
 
-    Set<Map.Entry<String, String>> list = unsortMap.entrySet();
+    Set<Entry<String, String>> list = unsortMap.entrySet();
 
-    Comparator<Map.Entry<String, String>> comparator = new Comparator<Map.Entry<String, String>>() {
+    /*
+    Comparator<Entry<String, String>> comparator = new Comparator<Entry<String, String>>() {
       @Override
       public int compare(Entry<String, String> o1, Entry<String, String> o2) {
         return o1.getValue().compareTo(o2.getValue());
       }
     };
 
-    //List<Entry<String, String>> sortedList = list.stream().sorted(comparator).collect(Collectors.toList());
+    List<Entry<String, String>> sortedList = list.stream().sorted(comparator).collect(Collectors.toList());
     
+    */
      List<Entry<String, String>> sortedList = list.stream()
-         .sorted(Map.Entry.comparingByValue()).collect(Collectors.toList());
+         .sorted(Entry.comparingByValue()).collect(Collectors.toList());
     
 
     // put sorted list into map again //LinkedHashMap make sure order in which keys were inserted
@@ -58,7 +59,7 @@ public class SortMapOnValueExample {
   }
 
   public static void printMap(Map<String, String> map) {
-    for (Map.Entry<String, String> entry : map.entrySet()) {
+    for (Entry<String, String> entry : map.entrySet()) {
       System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
     }
   }

@@ -1,4 +1,4 @@
-package com.collection.msc;
+package com.collection.list;
 
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;

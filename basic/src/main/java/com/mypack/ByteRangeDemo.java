@@ -1,6 +1,6 @@
 package com.mypack;
 
-public class ShortRangeDemo {
+public class ByteRangeDemo {
   public static void main(String[] args) {
     byte a = 127;// a=127+ will show an error at compile time
     int b = a;

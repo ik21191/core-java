@@ -1,5 +1,6 @@
 package com.mypack.java8.function;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class MyConsumer implements Consumer<String> {
@@ -15,5 +16,10 @@ public class MyConsumer implements Consumer<String> {
     
     consumer = (value)->System.out.println("Value is: " + value);
     consumer.accept("Hello");
+    
+    //BiConsumer
+    BiConsumer<Integer, String> biConsumer = (val1, val2) -> 
+    System.out.println("\nBiConsumer \nID : " + val1 + "\tName :" + val2);
+    biConsumer.accept(1001, "Imran Khan");
   }
 }

@@ -3,10 +3,10 @@ package com.collection.map;
 import java.util.*;
 import java.util.Map.Entry;
 
-class SortByKeyAscending implements Comparator<Map.Entry<Integer, Integer>> {
+class SortByKeyAscending implements Comparator<Entry<Integer, Integer>> {
 
   @Override
-  public int compare(Map.Entry<Integer, Integer> entry1, Map.Entry<Integer, Integer> entry2) {
+  public int compare(Entry<Integer, Integer> entry1, Entry<Integer, Integer> entry2) {
     return (entry1.getKey()).compareTo(entry2.getKey());
   }
 }
@@ -25,14 +25,14 @@ public class SortLinkedHashMap {
     List<Entry<Integer, Integer>> listOfentrySet = new ArrayList<>(entrySet);
 
     System.out.print("Before sorting by key : ");
-    for (Map.Entry<Integer, Integer> entry : listOfentrySet) {
+    for (Entry<Integer, Integer> entry : listOfentrySet) {
       System.out.print(entry.getKey() + "=" + entry.getValue() + "  ");
     }
 
     Collections.sort(listOfentrySet, new SortByKeyAscending());
 
     System.out.print("\nAfter sorting by key(ascending): ");
-    for (Map.Entry<Integer, Integer> entry : listOfentrySet)
-      System.out.print(entry.getKey() + " = " + entry.getValue() + "  ");
+    for (Entry<Integer, Integer> entry : listOfentrySet)
+      System.out.print(entry.getKey() + "=" + entry.getValue() + "  ");
   }
 }
