@@ -36,12 +36,14 @@ class MockitoJUnit5ExtensionTest {
     }
 
     int calculateSum(int a, int b) {
+      System.out.println("dummy result is " + service.dummy());
       return service.add(a, b);
     }
   }
 
   interface CalculatorService {
     int add(int a, int b);
+    int dummy();
   }
 }
 

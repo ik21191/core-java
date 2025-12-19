@@ -69,7 +69,7 @@ public class ProblemSolvingExample {
     findNumberOfCountWay1(ints);
     findNumberOfCountWay2(ints);
     findNumberOfCountWay3(ints);
-    findNumberOfCountWay4(ints);
+    findNumberOfCountWay4();
   }
 
   private static void findNumberOfCountWay1(int[] ints) {
@@ -117,11 +117,10 @@ public class ProblemSolvingExample {
     
     System.out.println("Calculating number of count \n");
     
-    System.out.println("findNumberOfCountWay3() : " + map);
-    
+    System.out.println("findNumberOfCountWay3() : " + map); 
   }
   
-  private static void findNumberOfCountWay4(int[] ints) {
+  private static void findNumberOfCountWay4() {
     //Now suppose we have list
     List<Person> list = new ArrayList<>();
     list.add(new Person(101, "Delhi"));
@@ -135,11 +134,8 @@ public class ProblemSolvingExample {
     Map<Integer, Long> map = list.stream().collect(Collectors.groupingBy
         (Person::id, Collectors.mapping(Person::city, Collectors.counting())));
     
-    
     System.out.println("Calculating number of count \n");
     
     System.out.println("findNumberOfCountWay4() : " + map);
-    
   }
-  
 }

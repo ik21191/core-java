@@ -34,9 +34,11 @@ public class FutureDemo2 {
 		
 		service.shutdown();
 		/*
-		 * while(!future.isDone()) { System.out.println("Task not completed");
-		 * //System.out.println(future.get()); }
-		 */
+        while (!future.isDone()) {
+          System.out.println("Task not completed");
+          System.out.println(future.get());
+        }
+		*/
 		System.out.println("Task completed.");
 	}
 
